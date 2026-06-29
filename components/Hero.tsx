@@ -24,24 +24,6 @@ export default function Hero({ email, onEmail, onSubmit, ctaLabel }: HeroProps) 
     >
       {/* Left column */}
       <div>
-        <div
-          style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: 8,
-            background: 'var(--accent-soft)',
-            color: 'var(--accent-ink)',
-            padding: '6px 14px',
-            borderRadius: 999,
-            fontSize: 13,
-            fontWeight: 600,
-            marginBottom: 24,
-          }}
-        >
-          <span style={{ width: 7, height: 7, borderRadius: '50%', background: 'var(--accent)' }} />
-          For international students
-        </div>
-
         <h1
           style={{
             fontFamily: 'var(--font-newsreader, "Newsreader", serif)',
