@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Newsreader, Hanken_Grotesk } from 'next/font/google'
+import Script from 'next/script'
 import './globals.css'
 
 const newsreader = Newsreader({
@@ -42,6 +43,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           overflowX: 'hidden',
         }}
       >
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-MMPVTFKP5H"
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-MMPVTFKP5H');
+          `}
+        </Script>
         {children}
       </body>
     </html>
