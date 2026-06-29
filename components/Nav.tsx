@@ -67,7 +67,7 @@ export default function Nav() {
 
         <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
           <a
-            href="#signin"
+            href="/signin"
             style={{
               textDecoration: 'none',
               color: 'var(--muted)',
@@ -78,7 +78,7 @@ export default function Nav() {
             Sign in
           </a>
           <a
-            href="#waitlist"
+            href="/signup"
             className="nav-cta"
             style={{
               textDecoration: 'none',
