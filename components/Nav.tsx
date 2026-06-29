@@ -1,8 +1,9 @@
 const navLinks = [
-  { href: '#services', label: 'Our Solution' },
-  { href: '#how', label: 'How it works' },
-  { href: '#pricing', label: 'Pricing' },
-  { href: '#faq', label: 'FAQ' },
+  { href: '/#services', label: 'Our Solution' },
+  { href: '/#how', label: 'How it works' },
+  { href: '/#pricing', label: 'Pricing' },
+  { href: '/about', label: 'About us' },
+  { href: '/#faq', label: 'FAQ' },
 ]
 
 export default function Nav() {
@@ -29,7 +30,7 @@ export default function Nav() {
         }}
       >
         <a
-          href="#top"
+          href="/"
           style={{ display: 'flex', alignItems: 'center', gap: 11, textDecoration: 'none', color: 'var(--ink)' }}
         >
           <span
