@@ -1,5 +1,5 @@
 const navLinks = [
-  { href: '#services', label: 'What we handle' },
+  { href: '#services', label: 'Our Solution' },
   { href: '#how', label: 'How it works' },
   { href: '#pricing', label: 'Pricing' },
   { href: '#faq', label: 'FAQ' },
@@ -64,21 +64,34 @@ export default function Nav() {
           ))}
         </div>
 
-        <a
-          href="#waitlist"
-          className="nav-cta"
-          style={{
-            textDecoration: 'none',
-            background: 'var(--ink)',
-            color: '#fff',
-            padding: '10px 18px',
-            borderRadius: 999,
-            fontSize: 14,
-            fontWeight: 600,
-          }}
-        >
-          Join waitlist
-        </a>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+          <a
+            href="#signin"
+            style={{
+              textDecoration: 'none',
+              color: 'var(--muted)',
+              fontSize: 14,
+              fontWeight: 500,
+            }}
+          >
+            Sign in
+          </a>
+          <a
+            href="#waitlist"
+            className="nav-cta"
+            style={{
+              textDecoration: 'none',
+              background: 'var(--ink)',
+              color: '#fff',
+              padding: '10px 18px',
+              borderRadius: 999,
+              fontSize: 14,
+              fontWeight: 600,
+            }}
+          >
+            Join now
+          </a>
+        </div>
       </nav>
     </header>
   )
