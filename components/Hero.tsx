@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 interface HeroProps {
   email: string
   onEmail: (v: string) => void
@@ -66,49 +68,24 @@ export default function Hero({ email, onEmail, onSubmit, ctaLabel }: HeroProps) 
           that helps you move forward with confidence.
         </p>
 
-        <form
-          onSubmit={onSubmit}
-          id="waitlist"
-          style={{ display: 'flex', flexWrap: 'wrap', gap: 10, maxWidth: 480 }}
+        <Link
+          href="/signup"
+          className="btn-accent"
+          style={{
+            display: 'inline-block',
+            padding: '14px 32px',
+            color: '#fff',
+            fontSize: 15,
+            fontWeight: 700,
+            textDecoration: 'none',
+            whiteSpace: 'nowrap',
+          }}
         >
-          <input
-            value={email}
-            onChange={(e) => onEmail(e.target.value)}
-            type="email"
-            placeholder="you@university.edu"
-            className="input-field"
-            style={{
-              flex: '1 1 220px',
-              minWidth: 0,
-              padding: '14px 20px',
-              border: '1px solid var(--line)',
-              fontSize: 15,
-              fontWeight: 500,
-              fontFamily: 'inherit',
-              background: 'var(--surface)',
-              color: 'var(--ink)',
-            }}
-          />
-          <button
-            type="submit"
-            className="btn-accent"
-            style={{
-              padding: '14px 26px',
-              border: 'none',
-              color: '#fff',
-              fontSize: 15,
-              fontWeight: 700,
-              fontFamily: 'inherit',
-              cursor: 'pointer',
-              whiteSpace: 'nowrap',
-            }}
-          >
-            {ctaLabel}
-          </button>
-        </form>
+          Get started
+        </Link>
 
         <p style={{ fontSize: 13, fontWeight: 500, color: 'var(--muted)', margin: '14px 0 0' }}>
-          Free to join · Built by students who made the move
+          Free to get started · No credit card required
         </p>
       </div>
 

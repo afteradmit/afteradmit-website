@@ -22,7 +22,7 @@ export default function Home() {
     setSubmitted(true)
   }
 
-  const ctaLabel = submitted ? "You're on the list ✓" : 'Join now'
+  const ctaLabel = submitted ? "You're on the list ✓" : 'Get started'
 
   return (
     <>
