@@ -40,17 +40,30 @@ export default function Hero({ email, onEmail, onSubmit, ctaLabel }: HeroProps) 
 
         <p
           style={{
-            fontSize: 'clamp(1.06rem,1.6vw,1.24rem)',
-            fontWeight: 500,
-            lineHeight: 1.6,
+            fontSize: 'clamp(1.12rem,1.7vw,1.3rem)',
+            fontWeight: 600,
+            lineHeight: 1.5,
+            color: 'var(--ink)',
+            maxWidth: '30em',
+            margin: '0 0 14px',
+          }}
+        >
+          Getting accepted to your dream school is just the beginning.
+        </p>
+        <p
+          style={{
+            fontSize: 'clamp(0.95rem,1.4vw,1.05rem)',
+            fontWeight: 400,
+            lineHeight: 1.7,
             color: 'var(--muted)',
             maxWidth: '30em',
             margin: '0 0 32px',
           }}
         >
-          You got in. Now comes the visa, the housing, the flights, the bank account — a thousand
-          small things with hard deadlines. AfterAdmit turns the months between acceptance and
-          move-in into one clear, guided checklist, with real humans when you need them.
+          The months before your first day are filled with paperwork, deadlines, and important
+          decisions. From visas and housing to loans, insurance, and phone plans, AfterAdmit gives
+          you a personalized roadmap with timelines, checklists, trusted services, and a community
+          that helps you move forward with confidence.
         </p>
 
         <form
