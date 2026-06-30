@@ -33,8 +33,7 @@ export default function Hero({ email, onEmail, onSubmit, ctaLabel }: HeroProps) 
             margin: '0 0 22px',
           }}
         >
-          Congratulations! You got in.
-          <br />
+          <span style={{ fontSize: '0.94em', display: 'block' }}>Congratulations! You got in.</span>
           We&apos;ll handle{' '}
           <span style={{ color: 'var(--terracotta)' }}>what&apos;s next.</span>
         </h1>
