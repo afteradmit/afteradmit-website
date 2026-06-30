@@ -15,7 +15,7 @@ const stats = [
 
 export default function Problem() {
   return (
-    <section style={{ background: 'var(--ink)', color: '#fff' }}>
+    <section style={{ background: 'var(--ink)', color: 'var(--paper)' }}>
       <div style={{ maxWidth: 1180, margin: '0 auto', padding: 'clamp(64px,8vw,104px) 24px' }}>
         <div style={{ maxWidth: 760 }}>
           <span
@@ -23,20 +23,20 @@ export default function Problem() {
               fontSize: 13,
               letterSpacing: '.08em',
               textTransform: 'uppercase',
-              color: 'var(--accent-soft)',
-              fontWeight: 600,
+              fontWeight: 800,
+              color: 'var(--peach)',
             }}
           >
             The gap nobody warns you about
           </span>
           <h2
             style={{
-              fontFamily: 'var(--font-newsreader, "Newsreader", serif)',
-              fontWeight: 400,
-              fontSize: 'clamp(2rem,4.4vw,3.1rem)',
-              lineHeight: 1.12,
-              letterSpacing: '-.02em',
+              fontWeight: 800,
+              fontSize: 'clamp(2rem,4.4vw,3rem)',
+              lineHeight: 1.08,
+              letterSpacing: '-0.025em',
               margin: '18px 0 0',
+              color: 'var(--paper)',
             }}
           >
             The hard part isn&apos;t getting in. It&apos;s everything between the acceptance email
@@ -56,14 +56,16 @@ export default function Problem() {
             <div key={value}>
               <div
                 style={{
-                  fontFamily: 'var(--font-newsreader, "Newsreader", serif)',
-                  fontSize: '2.6rem',
-                  color: 'var(--accent-soft)',
+                  fontSize: 'clamp(2.6rem,4vw,2.8rem)',
+                  fontWeight: 800,
+                  letterSpacing: '-0.02em',
+                  lineHeight: 1,
+                  color: 'var(--apricot)',
                 }}
               >
                 {value}
               </div>
-              <p style={{ color: 'rgba(255,255,255,.66)', fontSize: 15, lineHeight: 1.5, margin: '6px 0 0' }}>
+              <p style={{ color: 'rgba(255,252,247,.66)', fontSize: 15, fontWeight: 500, lineHeight: 1.6, margin: '8px 0 0' }}>
                 {label}
               </p>
             </div>

@@ -100,8 +100,8 @@ export default function Privacy() {
         </span>
         <h1
           style={{
-            fontFamily: 'var(--font-newsreader, "Newsreader", serif)',
-            fontWeight: 500,
+
+            fontWeight: 800,
             fontSize: 'clamp(2rem, 4.5vw, 3rem)',
             letterSpacing: '-.02em',
             lineHeight: 1.08,

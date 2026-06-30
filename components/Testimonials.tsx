@@ -15,9 +15,12 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section style={{ maxWidth: 1180, margin: '0 auto', padding: 'clamp(64px,8vw,104px) 24px' }}>
+    <section style={{ background: 'var(--sand)' }}>
       <div
         style={{
+          maxWidth: 1180,
+          margin: '0 auto',
+          padding: 'clamp(64px,8vw,104px) 24px',
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fit,minmax(300px,1fr))',
           gap: 22,
@@ -28,16 +31,17 @@ export default function Testimonials() {
             key={name}
             style={{
               background: 'var(--surface)',
-              border: '1px solid var(--line)',
-              borderRadius: 20,
+              borderRadius: 'var(--radius-card)',
+              boxShadow: 'var(--shadow-card)',
               padding: 34,
             }}
           >
             <p
               style={{
-                fontFamily: 'var(--font-newsreader, "Newsreader", serif)',
-                fontSize: '1.35rem',
-                lineHeight: 1.45,
+                fontSize: '1.18rem',
+                fontWeight: 500,
+                lineHeight: 1.6,
+                color: 'var(--ink)',
                 margin: '0 0 24px',
               }}
             >
@@ -49,13 +53,13 @@ export default function Testimonials() {
                   width: 44,
                   height: 44,
                   borderRadius: '50%',
-                  background: 'repeating-linear-gradient(45deg,#ECE7DD 0 6px,#F4F0E8 6px 12px)',
+                  background: 'var(--peach)',
                   flexShrink: 0,
                 }}
               />
               <div>
                 <div style={{ fontWeight: 700, fontSize: 14.5 }}>{name}</div>
-                <div style={{ fontSize: 13, color: 'var(--muted)' }}>{origin}</div>
+                <div style={{ fontSize: 13, fontWeight: 500, color: 'var(--muted)' }}>{origin}</div>
               </div>
             </div>
           </div>

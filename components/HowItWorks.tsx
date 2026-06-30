@@ -18,7 +18,7 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section id="how" style={{ background: 'var(--accent-soft)' }}>
+    <section id="how" style={{ background: 'var(--paper)' }}>
       <div style={{ maxWidth: 1180, margin: '0 auto', padding: 'clamp(64px,8vw,104px) 24px' }}>
         <div style={{ maxWidth: 640, marginBottom: 48 }}>
           <span
@@ -26,19 +26,18 @@ export default function HowItWorks() {
               fontSize: 13,
               letterSpacing: '.08em',
               textTransform: 'uppercase',
-              color: 'var(--accent-ink)',
-              fontWeight: 600,
+              fontWeight: 800,
+              color: 'var(--terracotta)',
             }}
           >
             How it works
           </span>
           <h2
             style={{
-              fontFamily: 'var(--font-newsreader, "Newsreader", serif)',
-              fontWeight: 400,
+              fontWeight: 800,
               fontSize: 'clamp(2rem,4.4vw,3rem)',
-              lineHeight: 1.1,
-              letterSpacing: '-.02em',
+              lineHeight: 1.08,
+              letterSpacing: '-0.025em',
               margin: '16px 0 0',
               color: 'var(--ink)',
             }}
@@ -57,20 +56,26 @@ export default function HowItWorks() {
           {steps.map(({ num, title, desc }) => (
             <div
               key={num}
-              style={{ background: 'var(--surface)', borderRadius: 18, padding: 30 }}
+              style={{
+                background: 'var(--surface)',
+                borderRadius: 'var(--radius-card)',
+                boxShadow: 'var(--shadow-card)',
+                padding: 30,
+              }}
             >
               <div
                 style={{
-                  fontFamily: 'var(--font-newsreader, "Newsreader", serif)',
                   fontSize: '1.6rem',
-                  color: 'var(--accent)',
+                  fontWeight: 800,
+                  letterSpacing: '-0.02em',
+                  color: 'var(--terracotta)',
                   marginBottom: 16,
                 }}
               >
                 {num}
               </div>
-              <h3 style={{ fontSize: 19, fontWeight: 700, margin: '0 0 8px' }}>{title}</h3>
-              <p style={{ fontSize: 15, lineHeight: 1.55, color: 'var(--muted)', margin: 0 }}>{desc}</p>
+              <h3 style={{ fontSize: 19, fontWeight: 800, letterSpacing: '-0.01em', margin: '0 0 8px' }}>{title}</h3>
+              <p style={{ fontSize: 15, fontWeight: 500, lineHeight: 1.6, color: 'var(--muted)', margin: 0 }}>{desc}</p>
             </div>
           ))}
         </div>

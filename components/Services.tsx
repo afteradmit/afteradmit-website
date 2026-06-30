@@ -33,75 +33,75 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" style={{ maxWidth: 1180, margin: '0 auto', padding: 'clamp(64px,8vw,104px) 24px' }}>
-      <div style={{ maxWidth: 640, marginBottom: 48 }}>
-        <span
-          style={{
-            fontSize: 13,
-            letterSpacing: '.08em',
-            textTransform: 'uppercase',
-            color: 'var(--accent)',
-            fontWeight: 600,
-          }}
-        >
-          Our Solution
-        </span>
-        <h2
-          style={{
-            fontFamily: 'var(--font-newsreader, "Newsreader", serif)',
-            fontWeight: 400,
-            fontSize: 'clamp(2rem,4.4vw,3rem)',
-            lineHeight: 1.1,
-            letterSpacing: '-.02em',
-            margin: '16px 0 14px',
-          }}
-        >
-          One checklist for the whole journey.
-        </h2>
-        <p style={{ fontSize: '1.08rem', lineHeight: 1.55, color: 'var(--muted)', margin: 0 }}>
-          Every category, sequenced in the right order with the right deadlines — tailored to your
-          school, country and program.
-        </p>
-      </div>
-
-      <div
-        style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit,minmax(280px,1fr))',
-          gap: 18,
-        }}
-      >
-        {services.map(({ icon, title, desc }) => (
-          <div
-            key={title}
-            className="service-card"
+    <section id="services" style={{ background: 'var(--sand)' }}>
+      <div style={{ maxWidth: 1180, margin: '0 auto', padding: 'clamp(64px,8vw,104px) 24px' }}>
+        <div style={{ maxWidth: 640, marginBottom: 48 }}>
+          <span
             style={{
-              background: 'var(--surface)',
-              border: '1px solid var(--line)',
-              borderRadius: 18,
-              padding: 26,
+              fontSize: 13,
+              letterSpacing: '.08em',
+              textTransform: 'uppercase',
+              fontWeight: 800,
+              color: 'var(--terracotta)',
             }}
           >
-            <span
+            Our Solution
+          </span>
+          <h2
+            style={{
+              fontWeight: 800,
+              fontSize: 'clamp(2rem,4.4vw,3rem)',
+              lineHeight: 1.08,
+              letterSpacing: '-0.025em',
+              margin: '16px 0 14px',
+            }}
+          >
+            One checklist for the whole journey.
+          </h2>
+          <p style={{ fontSize: 'clamp(1.06rem,1.6vw,1.24rem)', fontWeight: 500, lineHeight: 1.6, color: 'var(--muted)', margin: 0 }}>
+            Every category, sequenced in the right order with the right deadlines — tailored to your
+            school, country and program.
+          </p>
+        </div>
+
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit,minmax(280px,1fr))',
+            gap: 18,
+          }}
+        >
+          {services.map(({ icon, title, desc }) => (
+            <div
+              key={title}
+              className="service-card"
               style={{
-                display: 'inline-flex',
-                width: 42,
-                height: 42,
-                borderRadius: 11,
-                background: 'var(--accent-soft)',
-                color: 'var(--accent-ink)',
-                alignItems: 'center',
-                justifyContent: 'center',
-                fontSize: 20,
-                marginBottom: 16,
+                background: 'var(--surface)',
+                borderRadius: 'var(--radius-card)',
+                boxShadow: 'var(--shadow-card)',
+                padding: 26,
               }}
             >
-              {icon}
-            </span>
-            <h3 style={{ fontSize: 18, fontWeight: 700, margin: '0 0 8px' }}>{title}</h3>
-            <p style={{ fontSize: 14.5, lineHeight: 1.55, color: 'var(--muted)', margin: 0 }}>{desc}</p>
-          </div>
-        ))}
+              <span
+                style={{
+                  display: 'inline-flex',
+                  width: 48,
+                  height: 48,
+                  borderRadius: 14,
+                  background: 'var(--peach)',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  fontSize: 22,
+                  marginBottom: 16,
+                }}
+              >
+                {icon}
+              </span>
+              <h3 style={{ fontSize: 19, fontWeight: 800, letterSpacing: '-0.01em', margin: '0 0 8px' }}>{title}</h3>
+              <p style={{ fontSize: 15, fontWeight: 500, lineHeight: 1.6, color: 'var(--muted)', margin: 0 }}>{desc}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   )

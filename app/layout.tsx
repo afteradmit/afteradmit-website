@@ -1,19 +1,12 @@
 import type { Metadata } from 'next'
-import { Newsreader, Hanken_Grotesk } from 'next/font/google'
+import { Hanken_Grotesk } from 'next/font/google'
 import Script from 'next/script'
 import './globals.css'
 
-const newsreader = Newsreader({
-  subsets: ['latin'],
-  weight: ['400', '500', '600'],
-  style: ['normal', 'italic'],
-  variable: '--font-newsreader',
-  display: 'swap',
-})
-
 const hankenGrotesk = Hanken_Grotesk({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
+  weight: ['400', '500', '600', '700', '800'],
+  style: ['normal', 'italic'],
   variable: '--font-hanken',
   display: 'swap',
 })
@@ -33,12 +26,12 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${newsreader.variable} ${hankenGrotesk.variable}`}>
+    <html lang="en" className={hankenGrotesk.variable}>
       <body
         style={{
           background: 'var(--bg)',
           color: 'var(--ink)',
-          fontFamily: 'var(--font-hanken, "Hanken Grotesk", sans-serif)',
+          fontFamily: 'var(--font-hanken, "Hanken Grotesk", system-ui, sans-serif)',
           WebkitFontSmoothing: 'antialiased',
           overflowX: 'hidden',
         }}

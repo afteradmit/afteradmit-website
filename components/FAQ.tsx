@@ -29,82 +29,82 @@ export default function FAQ() {
   const [open, setOpen] = useState(0)
 
   return (
-    <section
-      id="faq"
-      style={{
-        maxWidth: 760,
-        margin: '0 auto',
-        padding: 'clamp(40px,6vw,72px) 24px clamp(64px,8vw,104px)',
-      }}
-    >
-      <h2
+    <section id="faq" style={{ background: 'var(--sand)' }}>
+      <div
         style={{
-          fontFamily: 'var(--font-newsreader, "Newsreader", serif)',
-          fontWeight: 400,
-          fontSize: 'clamp(2rem,4.4vw,3rem)',
-          lineHeight: 1.1,
-          letterSpacing: '-.02em',
-          margin: '0 0 36px',
-          textAlign: 'center',
+          maxWidth: 760,
+          margin: '0 auto',
+          padding: 'clamp(40px,6vw,72px) 24px clamp(64px,8vw,104px)',
         }}
       >
-        Questions, answered.
-      </h2>
+        <h2
+          style={{
+            fontWeight: 800,
+            fontSize: 'clamp(2rem,4.4vw,3rem)',
+            lineHeight: 1.08,
+            letterSpacing: '-0.025em',
+            margin: '0 0 36px',
+            textAlign: 'center',
+          }}
+        >
+          Questions, answered.
+        </h2>
 
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-        {faqs.map((faq, i) => {
-          const isOpen = open === i
-          return (
-            <div
-              key={faq.q}
-              style={{
-                background: 'var(--surface)',
-                border: '1px solid var(--line)',
-                borderRadius: 14,
-                overflow: 'hidden',
-              }}
-            >
-              <button
-                onClick={() => setOpen(isOpen ? -1 : i)}
-                style={{
-                  width: '100%',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'space-between',
-                  gap: 16,
-                  padding: '20px 22px',
-                  background: 'none',
-                  border: 'none',
-                  cursor: 'pointer',
-                  textAlign: 'left',
-                  fontFamily: 'inherit',
-                }}
-              >
-                <span style={{ fontSize: 16.5, fontWeight: 600, color: 'var(--ink)' }}>
-                  {faq.q}
-                </span>
-                <span style={{ fontSize: 22, color: 'var(--accent)', lineHeight: 1, flexShrink: 0 }}>
-                  {isOpen ? '–' : '+'}
-                </span>
-              </button>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+          {faqs.map((faq, i) => {
+            const isOpen = open === i
+            return (
               <div
+                key={faq.q}
                 style={{
-                  display: 'grid',
-                  gridTemplateRows: isOpen ? '1fr' : '0fr',
-                  opacity: isOpen ? 1 : 0,
-                  transition: 'grid-template-rows .28s ease, opacity .28s ease',
-                  padding: '0 22px',
+                  background: 'var(--surface)',
+                  borderRadius: 'var(--radius-card)',
+                  boxShadow: 'var(--shadow-card)',
+                  overflow: 'hidden',
                 }}
               >
-                <div style={{ overflow: 'hidden' }}>
-                  <p style={{ margin: 0, paddingBottom: 20, fontSize: 15, lineHeight: 1.6, color: 'var(--muted)' }}>
-                    {faq.a}
-                  </p>
+                <button
+                  onClick={() => setOpen(isOpen ? -1 : i)}
+                  style={{
+                    width: '100%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'space-between',
+                    gap: 16,
+                    padding: '20px 24px',
+                    background: 'none',
+                    border: 'none',
+                    cursor: 'pointer',
+                    textAlign: 'left',
+                    fontFamily: 'inherit',
+                  }}
+                >
+                  <span style={{ fontSize: 16.5, fontWeight: 700, color: 'var(--ink)' }}>
+                    {faq.q}
+                  </span>
+                  <span style={{ fontSize: 22, color: 'var(--terracotta)', lineHeight: 1, flexShrink: 0 }}>
+                    {isOpen ? '–' : '+'}
+                  </span>
+                </button>
+                <div
+                  style={{
+                    display: 'grid',
+                    gridTemplateRows: isOpen ? '1fr' : '0fr',
+                    opacity: isOpen ? 1 : 0,
+                    transition: 'grid-template-rows .28s ease, opacity .28s ease',
+                    padding: '0 24px',
+                  }}
+                >
+                  <div style={{ overflow: 'hidden' }}>
+                    <p style={{ margin: 0, paddingBottom: 20, fontSize: 15, fontWeight: 500, lineHeight: 1.6, color: 'var(--muted)' }}>
+                      {faq.a}
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
-          )
-        })}
+            )
+          })}
+        </div>
       </div>
     </section>
   )

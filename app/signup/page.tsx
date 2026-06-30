@@ -76,8 +76,8 @@ export default function SignUp() {
         >
           <h1
             style={{
-              fontFamily: 'var(--font-newsreader, "Newsreader", serif)',
-              fontWeight: 500,
+
+              fontWeight: 800,
               fontSize: '1.8rem',
               letterSpacing: '-.02em',
               margin: '0 0 6px',

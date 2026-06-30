@@ -63,8 +63,8 @@ export default function Dashboard() {
         </span>
         <h1
           style={{
-            fontFamily: 'var(--font-newsreader, "Newsreader", serif)',
-            fontWeight: 500,
+
+            fontWeight: 800,
             fontSize: 'clamp(1.9rem, 4vw, 2.8rem)',
             letterSpacing: '-.02em',
             margin: '0 0 8px',

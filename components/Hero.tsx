@@ -26,23 +26,23 @@ export default function Hero({ email, onEmail, onSubmit, ctaLabel }: HeroProps) 
       <div>
         <h1
           style={{
-            fontFamily: 'var(--font-newsreader, "Newsreader", serif)',
-            fontWeight: 500,
-            fontSize: 'clamp(2.7rem,6vw,4.6rem)',
+            fontWeight: 800,
+            fontSize: 'clamp(2.7rem,6vw,4.5rem)',
             lineHeight: 1.02,
-            letterSpacing: '-.02em',
+            letterSpacing: '-0.03em',
             margin: '0 0 22px',
           }}
         >
           From admit to arrival,
           <br />
-          <span style={{ fontStyle: 'italic', color: 'var(--accent)' }}>handled.</span>
+          <span style={{ fontStyle: 'italic', color: 'var(--terracotta)' }}>handled.</span>
         </h1>
 
         <p
           style={{
-            fontSize: 'clamp(1.05rem,1.6vw,1.22rem)',
-            lineHeight: 1.55,
+            fontSize: 'clamp(1.06rem,1.6vw,1.24rem)',
+            fontWeight: 500,
+            lineHeight: 1.6,
             color: 'var(--muted)',
             maxWidth: '30em',
             margin: '0 0 32px',
@@ -67,10 +67,10 @@ export default function Hero({ email, onEmail, onSubmit, ctaLabel }: HeroProps) 
             style={{
               flex: '1 1 220px',
               minWidth: 0,
-              padding: '14px 16px',
+              padding: '14px 20px',
               border: '1px solid var(--line)',
-              borderRadius: 12,
               fontSize: 15,
+              fontWeight: 500,
               fontFamily: 'inherit',
               background: 'var(--surface)',
               color: 'var(--ink)',
@@ -80,12 +80,11 @@ export default function Hero({ email, onEmail, onSubmit, ctaLabel }: HeroProps) 
             type="submit"
             className="btn-accent"
             style={{
-              padding: '14px 22px',
+              padding: '14px 26px',
               border: 'none',
-              borderRadius: 12,
               color: '#fff',
               fontSize: 15,
-              fontWeight: 600,
+              fontWeight: 700,
               fontFamily: 'inherit',
               cursor: 'pointer',
               whiteSpace: 'nowrap',
@@ -95,7 +94,7 @@ export default function Hero({ email, onEmail, onSubmit, ctaLabel }: HeroProps) 
           </button>
         </form>
 
-        <p style={{ fontSize: 13.5, color: 'var(--muted)', margin: '14px 0 0' }}>
+        <p style={{ fontSize: 13, fontWeight: 500, color: 'var(--muted)', margin: '14px 0 0' }}>
           Free to join · Built by students who made the move
         </p>
       </div>
@@ -109,7 +108,7 @@ export default function Hero({ email, onEmail, onSubmit, ctaLabel }: HeroProps) 
             right: '-4%',
             width: '78%',
             height: '88%',
-            background: 'var(--accent-soft)',
+            background: 'var(--peach)',
             borderRadius: 28,
             transform: 'rotate(4deg)',
           }}
@@ -120,32 +119,24 @@ export default function Hero({ email, onEmail, onSubmit, ctaLabel }: HeroProps) 
             position: 'relative',
             width: 'min(380px,100%)',
             background: 'var(--surface)',
-            border: '1px solid var(--line)',
-            borderRadius: 22,
-            boxShadow: '0 30px 60px -28px rgba(27,34,48,.32)',
+            borderRadius: 'var(--radius-card)',
+            boxShadow: 'var(--shadow-card)',
             padding: 22,
           }}
         >
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 6 }}>
-            <span style={{ fontSize: 12, fontWeight: 600, letterSpacing: '.06em', textTransform: 'uppercase', color: 'var(--muted)' }}>
+            <span style={{ fontSize: 12, fontWeight: 800, letterSpacing: '.08em', textTransform: 'uppercase', color: 'var(--muted)' }}>
               Your roadmap
             </span>
-            <span style={{ fontSize: 12, fontWeight: 600, color: 'var(--accent)' }}>62% done</span>
+            <span style={{ fontSize: 12, fontWeight: 700, color: 'var(--terracotta)' }}>62% done</span>
           </div>
 
-          <div
-            style={{
-              fontFamily: 'var(--font-newsreader, "Newsreader", serif)',
-              fontSize: 21,
-              fontWeight: 500,
-              marginBottom: 14,
-            }}
-          >
+          <div style={{ fontSize: 21, fontWeight: 700, letterSpacing: '-0.01em', marginBottom: 14 }}>
             Fall &apos;26 · Boston
           </div>
 
-          <div style={{ height: 7, borderRadius: 99, background: 'var(--accent-soft)', overflow: 'hidden', marginBottom: 18 }}>
-            <div style={{ width: '62%', height: '100%', background: 'var(--accent)', borderRadius: 99 }} />
+          <div style={{ height: 7, borderRadius: 99, background: 'var(--peach)', overflow: 'hidden', marginBottom: 18 }}>
+            <div style={{ width: '62%', height: '100%', background: 'var(--terracotta)', borderRadius: 99 }} />
           </div>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: 11 }}>
@@ -154,35 +145,34 @@ export default function Hero({ email, onEmail, onSubmit, ctaLabel }: HeroProps) 
                 <span
                   style={{
                     width: 22, height: 22, borderRadius: 7,
-                    background: 'var(--accent)', color: '#fff',
+                    background: 'var(--terracotta)', color: '#fff',
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
                     fontSize: 13, flexShrink: 0,
                   }}
                 >
                   ✓
                 </span>
-                <span style={{ fontSize: 14.5, color: 'var(--muted)', textDecoration: 'line-through' }}>{task}</span>
+                <span style={{ fontSize: 14.5, fontWeight: 500, color: 'var(--muted)', textDecoration: 'line-through' }}>{task}</span>
               </div>
             ))}
 
-            {/* In-progress task */}
             <div
               style={{
                 display: 'flex', alignItems: 'center', gap: 12,
-                background: 'var(--accent-soft)', margin: '0 -10px',
+                background: 'var(--peach)', margin: '0 -10px',
                 padding: '8px 10px', borderRadius: 10,
               }}
             >
-              <span style={{ width: 22, height: 22, borderRadius: 7, border: '2px solid var(--accent)', flexShrink: 0 }} />
-              <span style={{ fontSize: 14.5, fontWeight: 600 }}>
-                Book visa interview <span style={{ color: 'var(--accent)' }}>· due in 5 days</span>
+              <span style={{ width: 22, height: 22, borderRadius: 7, border: '2px solid var(--terracotta)', flexShrink: 0 }} />
+              <span style={{ fontSize: 14.5, fontWeight: 700 }}>
+                Book visa interview <span style={{ color: 'var(--terracotta)' }}>· due in 5 days</span>
               </span>
             </div>
 
             {pendingTasks.map((task) => (
               <div key={task} style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
                 <span style={{ width: 22, height: 22, borderRadius: 7, border: '2px solid var(--line)', flexShrink: 0 }} />
-                <span style={{ fontSize: 14.5, color: 'var(--ink)' }}>{task}</span>
+                <span style={{ fontSize: 14.5, fontWeight: 500, color: 'var(--ink)' }}>{task}</span>
               </div>
             ))}
           </div>

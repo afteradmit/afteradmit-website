@@ -33,8 +33,8 @@ export default function CompleteProfile() {
           </div>
           <h1
             style={{
-              fontFamily: 'var(--font-newsreader, "Newsreader", serif)',
-              fontWeight: 500,
+
+              fontWeight: 800,
               fontSize: '1.9rem',
               letterSpacing: '-.02em',
               margin: '0 0 12px',

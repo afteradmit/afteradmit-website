@@ -59,11 +59,10 @@ export default function About() {
           </span>
           <h1
             style={{
-              fontFamily: 'var(--font-newsreader, "Newsreader", serif)',
-              fontWeight: 500,
+              fontWeight: 800,
               fontSize: 'clamp(2.4rem,5.5vw,4rem)',
-              lineHeight: 1.06,
-              letterSpacing: '-.02em',
+              lineHeight: 1.02,
+              letterSpacing: '-0.03em',
               margin: '0 0 22px',
             }}
           >
@@ -142,10 +141,11 @@ export default function About() {
               <div key={label}>
                 <div
                   style={{
-                    fontFamily: 'var(--font-newsreader, "Newsreader", serif)',
+      
                     fontSize: 'clamp(2.2rem,4vw,3rem)',
-                    fontWeight: 500,
-                    color: 'var(--accent)',
+                    fontWeight: 800,
+                    letterSpacing: '-0.02em',
+                    color: 'var(--terracotta)',
                     lineHeight: 1,
                     marginBottom: 8,
                   }}
@@ -182,11 +182,11 @@ export default function About() {
             </span>
             <h2
               style={{
-                fontFamily: 'var(--font-newsreader, "Newsreader", serif)',
-                fontWeight: 400,
+  
+                fontWeight: 800,
                 fontSize: 'clamp(1.9rem,3.8vw,2.8rem)',
-                lineHeight: 1.1,
-                letterSpacing: '-.02em',
+                lineHeight: 1.08,
+                letterSpacing: '-0.025em',
                 margin: 0,
                 maxWidth: '18em',
               }}
@@ -273,7 +273,7 @@ export default function About() {
             <div style={{ position: 'relative' }}>
               <h2
                 style={{
-                  fontFamily: 'var(--font-newsreader, "Newsreader", serif)',
+    
                   fontWeight: 400,
                   fontSize: 'clamp(2rem,4vw,3rem)',
                   lineHeight: 1.1,
