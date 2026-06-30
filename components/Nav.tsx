@@ -33,23 +33,7 @@ export default function Nav() {
           href="/"
           style={{ display: 'flex', alignItems: 'center', gap: 11, textDecoration: 'none', color: 'var(--ink)' }}
         >
-          <span
-            style={{
-              width: 34,
-              height: 34,
-              borderRadius: 10,
-              background: 'var(--accent)',
-              color: '#fff',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              fontSize: 18,
-              fontWeight: 700,
-              transform: 'rotate(-6deg)',
-            }}
-          >
-            ↗
-          </span>
+          <img src="/logo.png" alt="AfterAdmit" style={{ width: 34, height: 34, borderRadius: 10, display: 'block' }} />
           <span style={{ fontWeight: 700, fontSize: 19, letterSpacing: '-.02em' }}>AfterAdmit</span>
         </a>
 

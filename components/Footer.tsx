@@ -21,23 +21,7 @@ export default function Footer() {
         }}
       >
         <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-          <span
-            style={{
-              width: 28,
-              height: 28,
-              borderRadius: 8,
-              background: 'var(--accent)',
-              color: '#fff',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              fontSize: 15,
-              fontWeight: 700,
-              transform: 'rotate(-6deg)',
-            }}
-          >
-            ↗
-          </span>
+          <img src="/logo.png" alt="AfterAdmit" style={{ width: 28, height: 28, borderRadius: 8, display: 'block' }} />
           <span style={{ fontWeight: 700, fontSize: 16 }}>AfterAdmit</span>
         </div>
 
