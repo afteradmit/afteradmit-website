@@ -33,9 +33,10 @@ export default function Hero({ email, onEmail, onSubmit, ctaLabel }: HeroProps) 
             margin: '0 0 22px',
           }}
         >
-          From admit to arrival,
+          Congratulations! You got in.
           <br />
-          <span style={{ fontStyle: 'italic', color: 'var(--terracotta)' }}>handled.</span>
+          We&apos;ll handle{' '}
+          <span style={{ color: 'var(--terracotta)' }}>what&apos;s next.</span>
         </h1>
 
         <p
