@@ -49,7 +49,11 @@ export default function Footer() {
           ))}
         </div>
 
-        <span style={{ fontSize: 13, color: 'var(--muted)' }}>© 2026 AfterAdmit</span>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 20, flexWrap: 'wrap' }}>
+          <a href="/privacy" style={{ fontSize: 13, color: 'var(--muted)', textDecoration: 'none' }}>Privacy Policy</a>
+          <a href="/terms" style={{ fontSize: 13, color: 'var(--muted)', textDecoration: 'none' }}>Terms of Service</a>
+          <span style={{ fontSize: 13, color: 'var(--muted)' }}>© 2026 AfterAdmit</span>
+        </div>
       </div>
     </footer>
   )
