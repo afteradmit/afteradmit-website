@@ -68,21 +68,40 @@ export default function Hero({ email, onEmail, onSubmit, ctaLabel }: HeroProps) 
           that helps you move forward with confidence.
         </p>
 
-        <Link
-          href="/signup"
-          className="btn-accent"
-          style={{
-            display: 'inline-block',
-            padding: '14px 32px',
-            color: '#fff',
-            fontSize: 15,
-            fontWeight: 700,
-            textDecoration: 'none',
-            whiteSpace: 'nowrap',
-          }}
-        >
-          Get started
-        </Link>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12, alignItems: 'center' }}>
+          <Link
+            href="/signup"
+            className="btn-accent"
+            style={{
+              display: 'inline-block',
+              padding: '14px 32px',
+              color: '#fff',
+              fontSize: 15,
+              fontWeight: 700,
+              textDecoration: 'none',
+              whiteSpace: 'nowrap',
+            }}
+          >
+            Get started &rarr;
+          </Link>
+          <Link
+            href="/#how-it-works"
+            style={{
+              display: 'inline-block',
+              padding: '13px 28px',
+              border: '1.5px solid var(--terracotta)',
+              borderRadius: 'var(--radius-pill)',
+              color: 'var(--terracotta)',
+              fontSize: 15,
+              fontWeight: 600,
+              textDecoration: 'none',
+              whiteSpace: 'nowrap',
+              background: 'transparent',
+            }}
+          >
+            See how it works
+          </Link>
+        </div>
 
         <p style={{ fontSize: 13, fontWeight: 500, color: 'var(--muted)', margin: '14px 0 0' }}>
           Free to get started · No credit card required
