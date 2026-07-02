@@ -3,6 +3,8 @@ const navLinks = [
   { href: '/#how', label: 'How it works' },
   { href: '/#pricing', label: 'Pricing' },
   { href: '/about', label: 'About us' },
+  { href: '/community', label: 'Community' },
+  { href: '/resources', label: 'Resources' },
   { href: '/#faq', label: 'FAQ' },
 ]
 
