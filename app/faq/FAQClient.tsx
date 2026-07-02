@@ -176,7 +176,7 @@ export default function FAQClient() {
             to help.
           </p>
           <Link
-            href="mailto:support@afteradmit.com"
+            href="/contact"
             style={{
               display: 'inline-block',
               padding: '10px 20px',
