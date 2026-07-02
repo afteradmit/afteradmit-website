@@ -25,11 +25,11 @@ const faqs = [
   },
 ]
 
-export default function FAQ() {
+export default function FAQ({ standalone }: { standalone?: boolean }) {
   const [open, setOpen] = useState(0)
 
   return (
-    <section id="faq" style={{ background: 'var(--sand)' }}>
+    <section id="faq" style={{ background: standalone ? 'transparent' : 'var(--sand)' }}>
       <div
         style={{
           maxWidth: 760,
@@ -37,18 +37,20 @@ export default function FAQ() {
           padding: 'clamp(40px,6vw,72px) 24px clamp(64px,8vw,104px)',
         }}
       >
-        <h2
-          style={{
-            fontWeight: 800,
-            fontSize: 'clamp(2rem,4.4vw,3rem)',
-            lineHeight: 1.08,
-            letterSpacing: '-0.025em',
-            margin: '0 0 36px',
-            textAlign: 'center',
-          }}
-        >
-          Questions, answered.
-        </h2>
+        {!standalone && (
+          <h2
+            style={{
+              fontWeight: 800,
+              fontSize: 'clamp(2rem,4.4vw,3rem)',
+              lineHeight: 1.08,
+              letterSpacing: '-0.025em',
+              margin: '0 0 36px',
+              textAlign: 'center',
+            }}
+          >
+            Questions, answered.
+          </h2>
+        )}
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
           {faqs.map((faq, i) => {

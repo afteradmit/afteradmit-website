@@ -8,7 +8,6 @@ import Problem from '@/components/Problem'
 import Services from '@/components/Services'
 import Testimonials from '@/components/Testimonials'
 import Pricing from '@/components/Pricing'
-import FAQ from '@/components/FAQ'
 import FinalCTA from '@/components/FinalCTA'
 import Footer from '@/components/Footer'
 
@@ -33,7 +32,6 @@ export default function Home() {
         <Services />
         <Testimonials />
         <Pricing />
-        <FAQ />
         <FinalCTA email={email} onEmail={setEmail} onSubmit={handleSubmit} ctaLabel={ctaLabel} />
       </main>
       <Footer />

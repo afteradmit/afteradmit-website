@@ -5,7 +5,7 @@ const navLinks = [
   { href: '/about', label: 'About us' },
   { href: '/community', label: 'Community' },
   { href: '/resources', label: 'Resources' },
-  { href: '/#faq', label: 'FAQ' },
+  { href: '/faq', label: 'FAQ' },
 ]
 
 export default function Nav() {
