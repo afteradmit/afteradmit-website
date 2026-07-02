@@ -14,7 +14,7 @@ const hankenGrotesk = Hanken_Grotesk({
 export const metadata: Metadata = {
   title: {
     default: 'AfterAdmit',
-    template: '%s — AfterAdmit',
+    template: '%s | AfterAdmit',
   },
   description:
     'AfterAdmit helps international students manage every step between acceptance and move-in day — visa, housing, flights, banking, health insurance, and more.',
