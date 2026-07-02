@@ -3,7 +3,7 @@ import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'About Us — AfterAdmit',
+  title: 'About us',
   description:
     'AfterAdmit was built by international students who lived the chaos of moving abroad for university. Learn our story and what drives us.',
 }

@@ -3,7 +3,7 @@ import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy — AfterAdmit',
+  title: 'Privacy Policy',
   description: 'How AfterAdmit collects, uses, and protects your personal information.',
 }
 
