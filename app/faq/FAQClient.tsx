@@ -6,29 +6,57 @@ import Link from 'next/link'
 const faqs = [
   {
     q: 'Who is AfterAdmit for?',
-    a: "Any admitted international student preparing to move for their studies. Whether you're starting an undergrad, master's or PhD, the journey from acceptance to arrival is the same set of moving parts, and that's exactly what we organize.",
+    a: "Any admitted student getting ready for what comes after the acceptance letter. That includes international students coming to the US and domestic students navigating the same maze of housing, funding, and paperwork. Whether you're starting a master's, MBA, or PhD, AfterAdmit helps you navigate every step from admission to your arrival on campus and beyond.",
   },
   {
-    q: 'Is the roadmap really tailored to me?',
-    a: 'Yes. We build it from your specific school, program, home country and start date, so deadlines, document lists and consulate requirements match your real situation, not a generic template.',
+    q: "I'm an undergrad. Can I still use it?",
+    a: 'Yes. Our current focus is on graduate students, but the resources, checklists, and guidance apply to undergraduates too, and we plan to expand support for them over time.',
   },
   {
-    q: 'Do you give immigration or legal advice?',
-    a: "We help you understand and stay ahead of every requirement, prepare your documents and practice for your interview. For formal legal questions we point you to qualified professionals. We never pretend to replace them.",
+    q: 'Is the roadmap really personalized?',
+    a: "Yes. It's built from the details you share: your university, your program, where you're coming from, and when you start. Two students admitted to the same school can have very different journeys, and your roadmap reflects yours, not a one-size-fits-all list. That said, treat it as a planning guide. Always confirm requirements with your university and visa office, since they have the final word.",
   },
   {
-    q: 'When does it open in my region?',
-    a: "We're rolling out region by region based on demand. Join the waitlist with your school email and we'll notify you the moment your country and university are supported.",
+    q: 'Do you provide immigration or legal advice?',
+    a: 'No. AfterAdmit is an information tool. We help you understand each step, keep track of deadlines, and get your documents in order. For anything that needs professional legal judgment, please check with a qualified expert.',
   },
   {
-    q: 'How much does it cost?',
-    a: 'The full roadmap is free. If you want a dedicated human advisor, document review and visa interview prep, the one-time Concierge plan covers your entire journey.',
+    q: 'When will AfterAdmit be available for my country or university?',
+    a: "We're rolling out in phases, starting with students headed to US graduate programs. Join the community with your university email and you'll hear from us the moment your school or destination is covered.",
+  },
+  {
+    q: 'How much does AfterAdmit cost?',
+    a: 'The core product is free, and it will stay that way. If you want hands-on support, our Concierge plan adds one-on-one help like document review and visa interview prep.',
+  },
+  {
+    q: "Can I use AfterAdmit if I've already started my visa process?",
+    a: "Yes. You can join at any point between admission and your first day on campus, or even after you've arrived. Tell us where you are in the process, and your roadmap picks up from there, so you can see what's done, what's next, and what you might have missed.",
+  },
+  {
+    q: 'How is AfterAdmit different from Google, Reddit, or WhatsApp groups?',
+    a: "Those places are full of advice, but it's scattered, often outdated, and rarely specific to your situation. AfterAdmit pulls the reliable information into one place, sequences it for your timeline, and tells you which sources you can actually trust. You spend less time searching and second-guessing, and more time preparing.",
+  },
+  {
+    q: 'Do I have to buy services through AfterAdmit?',
+    a: 'No. The roadmap works the same whether you use our recommended partners or arrange everything yourself. The partners we recommend are vetted based on student feedback and our quality standards, but the choice is always yours.',
   },
 ]
 
 export default function FAQClient() {
   const [search, setSearch] = useState('')
-  const [open, setOpen] = useState<number | null>(0)
+  const [openSet, setOpenSet] = useState<Set<number>>(new Set([0]))
+
+  const toggle = (i: number) => {
+    setOpenSet((prev) => {
+      const next = new Set(prev)
+      if (next.has(i)) {
+        next.delete(i)
+      } else {
+        next.add(i)
+      }
+      return next
+    })
+  }
 
   const filtered = faqs.filter(
     (f) =>
@@ -73,27 +101,29 @@ export default function FAQClient() {
 
         {/* Search bar */}
         <div style={{ position: 'relative', maxWidth: 560 }}>
-          <span
+          <svg
+            width="16" height="16" viewBox="0 0 16 16" fill="none"
+            xmlns="http://www.w3.org/2000/svg"
             style={{
               position: 'absolute',
               left: 18,
               top: '50%',
               transform: 'translateY(-50%)',
-              fontSize: 17,
-              color: 'var(--muted)',
               pointerEvents: 'none',
+              color: '#9E9188',
             }}
           >
-            🔍
-          </span>
+            <circle cx="6.5" cy="6.5" r="5" stroke="currentColor" strokeWidth="1.5"/>
+            <line x1="10.5" y1="10.5" x2="14" y2="14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+          </svg>
           <input
             type="search"
-            placeholder="Search questions and answers..."
+            placeholder="Search questions, topics or keywords..."
             value={search}
-            onChange={(e) => { setSearch(e.target.value); setOpen(null) }}
+            onChange={(e) => setSearch(e.target.value)}
             style={{
               width: '100%',
-              padding: '14px 20px 14px 48px',
+              padding: '14px 20px 14px 44px',
               borderRadius: 'var(--radius-pill)',
               border: '1.5px solid var(--line)',
               background: 'var(--surface)',
@@ -170,7 +200,7 @@ export default function FAQClient() {
             </p>
           )}
           {filtered.map((faq, i) => {
-            const isOpen = open === i
+            const isOpen = openSet.has(i)
             return (
               <div
                 key={faq.q}
@@ -182,7 +212,7 @@ export default function FAQClient() {
                 }}
               >
                 <button
-                  onClick={() => setOpen(isOpen ? null : i)}
+                  onClick={() => toggle(i)}
                   style={{
                     width: '100%',
                     display: 'flex',
