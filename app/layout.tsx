@@ -12,12 +12,19 @@ const hankenGrotesk = Hanken_Grotesk({
 })
 
 export const metadata: Metadata = {
-  title: 'AfterAdmit — From admit to arrival, handled.',
+  title: {
+    default: 'AfterAdmit',
+    template: '%s — AfterAdmit',
+  },
   description:
     'AfterAdmit helps international students manage every step between acceptance and move-in day — visa, housing, flights, banking, health insurance, and more.',
   keywords: ['international students', 'visa', 'I-20', 'housing', 'F-1 visa', 'university'],
+  icons: {
+    icon: '/logo.png',
+    apple: '/logo.png',
+  },
   openGraph: {
-    title: 'AfterAdmit — From admit to arrival, handled.',
+    title: 'AfterAdmit',
     description:
       'One personalized, ordered checklist for the whole journey — tailored to your school, country and program.',
     type: 'website',
