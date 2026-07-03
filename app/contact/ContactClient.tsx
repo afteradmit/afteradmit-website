@@ -157,7 +157,7 @@ export default function ContactClient() {
         style={{
           maxWidth: 640,
           margin: '0 auto',
-          padding: 'clamp(40px,5vw,48px) 24px clamp(64px,8vw,104px)',
+          padding: 'clamp(48px,7vw,72px) 24px clamp(48px,7vw,72px)',
         }}
       >
         <span
