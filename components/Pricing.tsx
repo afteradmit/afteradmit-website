@@ -1,17 +1,32 @@
-const freeFeatures = ['Tailored task list & deadlines', 'Document templates & guides', 'Deadline reminders']
+type Row = {
+  feature: string
+  basic: boolean
+  premium: boolean
+  premiumText?: string
+}
 
-const conciergeFeatures = [
-  'Everything in Roadmap',
-  '1:1 human advisor over chat',
-  'Document & lease review',
-  'Visa interview mock prep',
+const rows: Row[] = [
+  { feature: 'Tailored task list & deadlines', basic: true, premium: true },
+  { feature: 'Document templates & guides', basic: true, premium: true },
+  { feature: 'Deadline reminders', basic: true, premium: true },
+  { feature: 'Access to community hub', basic: true, premium: true },
+  { feature: '1:1 Chat Support', basic: false, premium: true, premiumText: 'Unlimited chat with an Advisor until arrival' },
+  { feature: 'Visa Interview Prep', basic: false, premium: true, premiumText: 'Dedicated 30-min mock session' },
+  { feature: '1:1 Advisor Calling Time', basic: false, premium: true, premiumText: 'Up to 4 hours (Max 8 sessions)' },
 ]
+
+const cellBase: React.CSSProperties = {
+  padding: '18px 20px',
+  fontSize: 14,
+  fontWeight: 500,
+  borderTop: '1px solid var(--line)',
+}
 
 export default function Pricing() {
   return (
     <section id="pricing" style={{ background: 'var(--paper)' }}>
       <div style={{ maxWidth: 1180, margin: '0 auto', padding: 'clamp(40px,6vw,72px) 24px clamp(64px,8vw,104px)' }}>
-        <div style={{ textAlign: 'center', maxWidth: 560, margin: '0 auto 48px' }}>
+        <div style={{ textAlign: 'center', maxWidth: 780, margin: '0 auto 48px' }}>
           <span
             style={{
               fontSize: 13,
@@ -26,125 +41,128 @@ export default function Pricing() {
           <h2
             style={{
               fontWeight: 800,
-              fontSize: 'clamp(2rem,4.4vw,3rem)',
+              fontSize: 'clamp(1.4rem,2.8vw,2.2rem)',
               lineHeight: 1.08,
               letterSpacing: '-0.025em',
               margin: '16px 0 0',
+              whiteSpace: 'nowrap',
             }}
           >
-            Start free. Upgrade when it gets real.
+            Find the Right Level of Support
           </h2>
+          <p style={{ fontSize: 15, lineHeight: 1.6, color: 'var(--muted)', margin: '16px 0 0', maxWidth: 760, marginLeft: 'auto', marginRight: 'auto' }}>
+            Start managing your relocation for free, or secure full 1:1 advisor guidance from day one.
+            You can also easily upgrade to Concierge from your dashboard at any point during your journey.
+          </p>
         </div>
 
         <div
           style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit,minmax(280px,1fr))',
-            gap: 22,
-            maxWidth: 760,
+            maxWidth: 860,
             margin: '0 auto',
+            borderRadius: 'var(--radius-card)',
+            boxShadow: 'var(--shadow-card)',
+            overflow: 'auto',
           }}
         >
-          {/* Free — Roadmap */}
-          <div
-            style={{
-              background: 'var(--surface)',
-              borderRadius: 'var(--radius-card)',
-              boxShadow: 'var(--shadow-card)',
-              padding: 32,
-            }}
-          >
-            <h3 style={{ fontSize: 19, fontWeight: 800, letterSpacing: '-0.01em', margin: '0 0 6px' }}>Roadmap</h3>
-            <div style={{ fontSize: 'clamp(2.6rem,4vw,2.8rem)', fontWeight: 800, letterSpacing: '-0.02em', lineHeight: 1, margin: '0 0 4px' }}>
-              Free
-            </div>
-            <p style={{ fontSize: 14, fontWeight: 500, color: 'var(--muted)', margin: '0 0 22px' }}>
-              Your full personalized checklist.
-            </p>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 11 }}>
-              {freeFeatures.map((f) => (
-                <div key={f} style={{ display: 'flex', gap: 10, fontSize: 15, fontWeight: 500 }}>
-                  <span style={{ color: 'var(--terracotta)', fontWeight: 700 }}>✓</span>
-                  {f}
-                </div>
-              ))}
-            </div>
-            <a
-              href="#waitlist"
-              className="btn-secondary"
-              style={{
-                display: 'block',
-                textAlign: 'center',
-                marginTop: 26,
-                padding: 13,
-                textDecoration: 'none',
-                fontWeight: 700,
-                fontSize: 15,
-                color: 'var(--ink)',
-              }}
-            >
-              Join free
-            </a>
-          </div>
+          <table style={{ width: '100%', minWidth: 640, borderCollapse: 'collapse', background: 'var(--surface)' }}>
+            <thead>
+              <tr>
+                <th style={{ textAlign: 'left', padding: '24px 20px', verticalAlign: 'bottom' }}>
+                  <span style={{ fontSize: 13, fontWeight: 700, color: 'var(--muted)' }}>Features</span>
+                </th>
+                <th style={{ padding: '24px 20px', textAlign: 'center', verticalAlign: 'bottom' }}>
+                  <div style={{ fontSize: 16, fontWeight: 800, letterSpacing: '-0.01em', marginBottom: 4 }}>Basic</div>
+                  <div style={{ fontSize: 13, fontWeight: 600, color: 'var(--muted)' }}>Free</div>
+                </th>
+                <th
+                  style={{
+                    padding: '24px 20px',
+                    textAlign: 'center',
+                    verticalAlign: 'bottom',
+                    background: 'var(--ink)',
+                    color: 'var(--paper)',
+                    borderTopLeftRadius: 16,
+                    borderTopRightRadius: 16,
+                    minWidth: 260,
+                  }}
+                >
+                  <div style={{ fontSize: 16, fontWeight: 800, letterSpacing: '-0.01em', marginBottom: 4 }}>
+                    Premium Concierge
+                  </div>
+                  <div style={{ fontSize: 15, fontWeight: 800, color: 'var(--apricot)' }}>$449</div>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {rows.map((row, i) => {
+                const isLast = i === rows.length - 1
+                return (
+                  <tr key={row.feature}>
+                    <td style={{ ...cellBase, color: 'var(--ink)', fontWeight: 600 }}>{row.feature}</td>
+                    <td style={{ ...cellBase, textAlign: 'center' }}>
+                      {row.basic ? (
+                        <span style={{ color: 'var(--terracotta)', fontWeight: 700 }}>✓</span>
+                      ) : (
+                        <span style={{ color: 'var(--muted)' }}>—</span>
+                      )}
+                    </td>
+                    <td
+                      style={{
+                        ...cellBase,
+                        textAlign: 'center',
+                        background: 'var(--ink)',
+                        color: 'var(--paper)',
+                        borderTop: '1px solid rgba(255,252,247,.12)',
+                        borderBottomLeftRadius: isLast ? 16 : 0,
+                        borderBottomRightRadius: isLast ? 16 : 0,
+                        fontWeight: row.premiumText ? 700 : 500,
+                        fontSize: row.premiumText ? 13 : 14,
+                        lineHeight: 1.5,
+                        minWidth: 260,
+                        whiteSpace: 'normal',
+                      }}
+                    >
+                      {row.premiumText ?? (
+                        <span style={{ color: 'var(--apricot)', fontWeight: 700 }}>✓</span>
+                      )}
+                    </td>
+                  </tr>
+                )
+              })}
+            </tbody>
+          </table>
+        </div>
 
-          {/* Paid — Concierge */}
-          <div
+        <div style={{ display: 'flex', gap: 14, justifyContent: 'center', flexWrap: 'wrap', marginTop: 32 }}>
+          <a
+            href="#waitlist"
+            className="btn-secondary"
             style={{
-              background: 'var(--ink)',
-              color: 'var(--paper)',
-              borderRadius: 'var(--radius-card)',
-              boxShadow: 'var(--shadow-card)',
-              padding: 32,
-              position: 'relative',
+              padding: '13px 28px',
+              borderRadius: 'var(--radius-pill)',
+              textDecoration: 'none',
+              fontWeight: 700,
+              fontSize: 15,
+              color: 'var(--ink)',
             }}
           >
-            <span
-              style={{
-                position: 'absolute',
-                top: 24,
-                right: 24,
-                background: 'var(--terracotta)',
-                color: '#fff',
-                fontSize: 12,
-                fontWeight: 700,
-                padding: '4px 12px',
-                borderRadius: 'var(--radius-pill)',
-              }}
-            >
-              Most chosen
-            </span>
-            <h3 style={{ fontSize: 19, fontWeight: 800, letterSpacing: '-0.01em', margin: '0 0 6px' }}>Concierge</h3>
-            <div style={{ fontSize: 'clamp(2.6rem,4vw,2.8rem)', fontWeight: 800, letterSpacing: '-0.02em', lineHeight: 1, color: 'var(--apricot)', margin: '0 0 4px' }}>
-              $149
-            </div>
-            <p style={{ fontSize: 14, fontWeight: 500, color: 'rgba(255,252,247,.6)', margin: '0 0 22px' }}>
-              One-time, for the whole journey.
-            </p>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 11 }}>
-              {conciergeFeatures.map((f) => (
-                <div key={f} style={{ display: 'flex', gap: 10, fontSize: 15, fontWeight: 500 }}>
-                  <span style={{ color: 'var(--apricot)', fontWeight: 700 }}>✓</span>
-                  {f}
-                </div>
-              ))}
-            </div>
-            <a
-              href="#waitlist"
-              className="btn-accent"
-              style={{
-                display: 'block',
-                textAlign: 'center',
-                marginTop: 26,
-                padding: 13,
-                textDecoration: 'none',
-                fontWeight: 700,
-                fontSize: 15,
-                color: '#fff',
-              }}
-            >
-              Get concierge
-            </a>
-          </div>
+            Get Started Free
+          </a>
+          <a
+            href="#waitlist"
+            className="btn-accent"
+            style={{
+              padding: '13px 28px',
+              borderRadius: 'var(--radius-pill)',
+              textDecoration: 'none',
+              fontWeight: 700,
+              fontSize: 15,
+              color: '#fff',
+            }}
+          >
+            Purchase Concierge
+          </a>
         </div>
       </div>
     </section>

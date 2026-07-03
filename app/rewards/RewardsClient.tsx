@@ -202,7 +202,7 @@ export default function RewardsClient() {
   const [active, setActive] = useState<Tab>('My Rewards')
 
   return (
-    <main style={{ background: 'var(--sand)', minHeight: 'calc(100vh - 65px)' }}>
+    <main style={{ background: 'var(--sand)' }}>
       <div
         style={{
           maxWidth: 1180,

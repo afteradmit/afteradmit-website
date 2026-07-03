@@ -65,7 +65,7 @@ export default function FAQClient() {
   )
 
   return (
-    <main style={{ background: 'var(--sand)', minHeight: 'calc(100vh - 65px)' }}>
+    <main style={{ background: 'var(--sand)' }}>
       {/* Header */}
       <div
         style={{

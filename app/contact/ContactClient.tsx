@@ -83,7 +83,7 @@ export default function ContactClient() {
 
   if (submitted) {
     return (
-      <main style={{ background: 'var(--sand)', minHeight: 'calc(100vh - 65px)' }}>
+      <main style={{ background: 'var(--sand)' }}>
         <div
           style={{
             maxWidth: 560,
@@ -152,7 +152,7 @@ export default function ContactClient() {
   }
 
   return (
-    <main style={{ background: 'var(--sand)', minHeight: 'calc(100vh - 65px)' }}>
+    <main style={{ background: 'var(--sand)' }}>
       <div
         style={{
           maxWidth: 640,
