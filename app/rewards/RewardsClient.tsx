@@ -207,7 +207,7 @@ export default function RewardsClient() {
         style={{
           maxWidth: 1400,
           margin: '0 auto',
-          padding: 'clamp(48px,7vw,72px) 24px 0',
+          padding: '48px 24px 0',
         }}
       >
         <span
@@ -279,7 +279,7 @@ export default function RewardsClient() {
         style={{
           maxWidth: 1400,
           margin: '0 auto',
-          padding: '32px 24px clamp(48px,7vw,72px)',
+          padding: '32px 24px 72px',
           display: 'grid',
           gridTemplateColumns: 'minmax(0,1fr) minmax(260px,320px)',
           gap: 32,

@@ -17,7 +17,7 @@ export default function Hero({ email, onEmail, onSubmit, ctaLabel }: HeroProps) 
       style={{
         maxWidth: 1400,
         margin: '0 auto',
-        padding: 'clamp(40px,6.8vw,82px) 24px clamp(40px,6vw,80px)',
+        padding: '48px 24px clamp(40px,6vw,80px)',
         display: 'grid',
         gridTemplateColumns: 'repeat(auto-fit,minmax(460px,1fr))',
         gap: 'clamp(40px,6vw,72px)',

@@ -71,7 +71,7 @@ export default function FAQClient() {
         style={{
           maxWidth: 1400,
           margin: '0 auto',
-          padding: 'clamp(48px,7vw,72px) 24px 40px',
+          padding: '48px 24px 40px',
         }}
       >
         <span
@@ -145,7 +145,7 @@ export default function FAQClient() {
         style={{
           maxWidth: 1400,
           margin: '0 auto',
-          padding: '0 24px clamp(48px,7vw,72px)',
+          padding: '0 24px 72px',
           display: 'grid',
           gridTemplateColumns: 'minmax(0,280px) minmax(0,930px)',
           gap: 40,

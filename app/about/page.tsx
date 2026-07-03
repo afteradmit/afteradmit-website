@@ -40,7 +40,7 @@ export default function About() {
           style={{
             maxWidth: 960,
             margin: '0 auto',
-            padding: 'clamp(56px,8vw,100px) 24px clamp(48px,6vw,80px)',
+            padding: '48px 24px clamp(48px,6vw,80px)',
             textAlign: 'center',
           }}
         >
@@ -245,7 +245,7 @@ export default function About() {
         </section>
 
         {/* CTA */}
-        <section style={{ maxWidth: 1400, margin: '0 auto', padding: '0 24px clamp(72px,9vw,120px)' }}>
+        <section style={{ maxWidth: 1400, margin: '0 auto', padding: '0 24px 72px' }}>
           <div
             style={{
               background: 'var(--ink)',
