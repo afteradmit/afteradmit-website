@@ -18,8 +18,8 @@ const steps = [
 
 export default function Problem() {
   return (
-    <section id="how-it-works" style={{ background: 'var(--ink)', color: 'var(--paper)' }}>
-      <div style={{ maxWidth: 1400, margin: '0 auto', padding: 'clamp(64px,8vw,104px) 24px' }}>
+    <section id="how-it-works" style={{ background: 'var(--sand)' }}>
+      <div style={{ maxWidth: 1400, margin: '0 auto', padding: 'clamp(64px,8vw,104px) 24px clamp(32px,4vw,56px)' }}>
         <div style={{ maxWidth: 640, marginBottom: 52 }}>
           <span
             style={{
@@ -27,7 +27,7 @@ export default function Problem() {
               letterSpacing: '.08em',
               textTransform: 'uppercase',
               fontWeight: 800,
-              color: 'var(--peach)',
+              color: 'var(--terracotta)',
             }}
           >
             How it works
@@ -39,7 +39,7 @@ export default function Problem() {
               lineHeight: 1.08,
               letterSpacing: '-0.025em',
               margin: '18px 0 0',
-              color: 'var(--paper)',
+              color: 'var(--ink)',
             }}
           >
             Three steps to a calm move-in.
@@ -57,8 +57,9 @@ export default function Problem() {
             <div
               key={num}
               style={{
-                background: 'rgba(255,252,247,.06)',
+                background: 'var(--surface)',
                 borderRadius: 'var(--radius-card)',
+                boxShadow: 'var(--shadow-card)',
                 padding: 30,
               }}
             >
@@ -67,14 +68,14 @@ export default function Problem() {
                   fontSize: '1.6rem',
                   fontWeight: 800,
                   letterSpacing: '-0.02em',
-                  color: 'var(--apricot)',
+                  color: 'var(--terracotta)',
                   marginBottom: 16,
                 }}
               >
                 {num}
               </div>
-              <h3 style={{ fontSize: 19, fontWeight: 800, letterSpacing: '-0.01em', margin: '0 0 8px', color: 'var(--paper)' }}>{title}</h3>
-              <p style={{ fontSize: 15, fontWeight: 500, lineHeight: 1.6, color: 'rgba(255,252,247,.6)', margin: 0 }}>{desc}</p>
+              <h3 style={{ fontSize: 19, fontWeight: 800, letterSpacing: '-0.01em', margin: '0 0 8px', color: 'var(--ink)' }}>{title}</h3>
+              <p style={{ fontSize: 15, fontWeight: 500, lineHeight: 1.6, color: 'var(--muted)', margin: 0 }}>{desc}</p>
             </div>
           ))}
         </div>

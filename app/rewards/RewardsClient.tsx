@@ -234,6 +234,10 @@ export default function RewardsClient() {
         >
           Earn points. Unlock rewards.
         </h1>
+        <p style={{ fontSize: 15, lineHeight: 1.6, color: 'var(--muted)', maxWidth: 640, margin: '-16px 0 32px' }}>
+          Earn points by completing milestones, engaging with the community, and exploring trusted
+          services. Redeem them for exclusive rewards, discounts, and vouchers.
+        </p>
 
         {/* Subsection tabs */}
         <div
