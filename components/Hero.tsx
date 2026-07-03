@@ -19,17 +19,17 @@ export default function Hero({ email, onEmail, onSubmit, ctaLabel }: HeroProps) 
         margin: '0 auto',
         padding: 'clamp(40px,6.8vw,82px) 24px clamp(40px,6vw,80px)',
         display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit,minmax(330px,1fr))',
+        gridTemplateColumns: 'repeat(auto-fit,minmax(460px,1fr))',
         gap: 'clamp(40px,6vw,72px)',
         alignItems: 'center',
       }}
     >
       {/* Left column */}
-      <div>
+      <div style={{ containerType: 'inline-size' } as React.CSSProperties}>
         <h1
           style={{
             fontWeight: 800,
-            fontSize: 'clamp(2.7rem,6vw,4.5rem)',
+            fontSize: 'clamp(3.2rem,11cqw,4.375rem)',
             lineHeight: 1.02,
             letterSpacing: '-0.03em',
             margin: '0 0 22px',
@@ -37,8 +37,9 @@ export default function Hero({ email, onEmail, onSubmit, ctaLabel }: HeroProps) 
         >
           <span style={{ whiteSpace: 'nowrap' }}>Congratulations! You got in.</span>
           <br />
-          We&apos;ll handle{' '}
-          <span style={{ color: 'var(--apricot)' }}>what&apos;s next.</span>
+          <span style={{ whiteSpace: 'nowrap' }}>
+            We&apos;ll handle <span style={{ color: 'var(--apricot)' }}>what&apos;s next.</span>
+          </span>
         </h1>
 
         <p
