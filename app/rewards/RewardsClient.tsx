@@ -207,7 +207,7 @@ export default function RewardsClient() {
         style={{
           maxWidth: 1400,
           margin: '0 auto',
-          padding: 'clamp(48px,7vw,80px) 24px 0',
+          padding: 'clamp(40px,5vw,48px) 24px 0',
         }}
       >
         <span

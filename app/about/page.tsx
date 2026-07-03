@@ -38,7 +38,7 @@ export default function About() {
         {/* Hero */}
         <section
           style={{
-            maxWidth: 780,
+            maxWidth: 960,
             margin: '0 auto',
             padding: 'clamp(56px,8vw,100px) 24px clamp(48px,6vw,80px)',
             textAlign: 'center',
@@ -86,7 +86,7 @@ export default function About() {
         {/* Story */}
         <section
           style={{
-            maxWidth: 680,
+            maxWidth: 800,
             margin: '0 auto',
             padding: '0 24px clamp(56px,7vw,96px)',
           }}

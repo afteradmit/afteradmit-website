@@ -69,9 +69,9 @@ export default function FAQClient() {
       {/* Header */}
       <div
         style={{
-          maxWidth: 900,
+          maxWidth: 1400,
           margin: '0 auto',
-          padding: 'clamp(48px,7vw,80px) 24px 40px',
+          padding: 'clamp(40px,5vw,48px) 24px 40px',
         }}
       >
         <span
@@ -143,11 +143,11 @@ export default function FAQClient() {
       {/* Two-column content */}
       <div
         style={{
-          maxWidth: 900,
+          maxWidth: 1400,
           margin: '0 auto',
           padding: '0 24px clamp(64px,8vw,104px)',
           display: 'grid',
-          gridTemplateColumns: 'minmax(0,240px) 1fr',
+          gridTemplateColumns: 'minmax(0,280px) minmax(0,930px)',
           gap: 40,
           alignItems: 'start',
         }}
