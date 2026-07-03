@@ -155,11 +155,12 @@ export default function ContactClient() {
     <main style={{ background: 'var(--sand)' }}>
       <div
         style={{
-          maxWidth: 640,
+          maxWidth: 1400,
           margin: '0 auto',
           padding: '48px 24px 72px',
         }}
       >
+      <div style={{ maxWidth: 640 }}>
         <span
           style={{
             fontSize: 12,
@@ -312,6 +313,7 @@ export default function ContactClient() {
             We typically reply between 1-4 business days.
           </p>
         </form>
+      </div>
       </div>
     </main>
   )

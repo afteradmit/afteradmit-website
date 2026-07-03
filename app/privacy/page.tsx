@@ -84,7 +84,8 @@ export default function Privacy() {
   return (
     <>
       <Nav />
-      <main style={{ maxWidth: 720, margin: '0 auto', padding: 'clamp(48px,7vw,88px) 24px clamp(64px,8vw,100px)' }}>
+      <main style={{ maxWidth: 1400, margin: '0 auto', padding: 'clamp(48px,7vw,88px) 24px clamp(64px,8vw,100px)' }}>
+      <div style={{ maxWidth: 900 }}>
         <span
           style={{
             fontSize: 12,
@@ -144,6 +145,7 @@ export default function Privacy() {
             </div>
           ))}
         </div>
+      </div>
       </main>
       <Footer />
     </>
