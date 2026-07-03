@@ -34,7 +34,7 @@ const services = [
 export default function Services() {
   return (
     <section id="services" style={{ background: 'var(--sand)' }}>
-      <div style={{ maxWidth: 1180, margin: '0 auto', padding: 'clamp(64px,8vw,104px) 24px' }}>
+      <div style={{ maxWidth: 1400, margin: '0 auto', padding: 'clamp(64px,8vw,104px) 24px' }}>
         <div style={{ maxWidth: 640, marginBottom: 48 }}>
           <span
             style={{

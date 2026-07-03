@@ -19,7 +19,7 @@ const steps = [
 export default function HowItWorks() {
   return (
     <section id="how" style={{ background: 'var(--paper)' }}>
-      <div style={{ maxWidth: 1180, margin: '0 auto', padding: 'clamp(64px,8vw,104px) 24px' }}>
+      <div style={{ maxWidth: 1400, margin: '0 auto', padding: 'clamp(64px,8vw,104px) 24px' }}>
         <div style={{ maxWidth: 640, marginBottom: 48 }}>
           <span
             style={{

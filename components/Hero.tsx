@@ -15,7 +15,7 @@ export default function Hero({ email, onEmail, onSubmit, ctaLabel }: HeroProps) 
     <section
       id="top"
       style={{
-        maxWidth: 1180,
+        maxWidth: 1400,
         margin: '0 auto',
         padding: 'clamp(40px,6.8vw,82px) 24px clamp(40px,6vw,80px)',
         display: 'grid',
@@ -35,7 +35,7 @@ export default function Hero({ email, onEmail, onSubmit, ctaLabel }: HeroProps) 
             margin: '0 0 22px',
           }}
         >
-          Congratulations! You got in.
+          <span style={{ whiteSpace: 'nowrap' }}>Congratulations! You got in.</span>
           <br />
           We&apos;ll handle{' '}
           <span style={{ color: 'var(--apricot)' }}>what&apos;s next.</span>

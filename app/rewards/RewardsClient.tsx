@@ -205,7 +205,7 @@ export default function RewardsClient() {
     <main style={{ background: 'var(--sand)' }}>
       <div
         style={{
-          maxWidth: 1180,
+          maxWidth: 1400,
           margin: '0 auto',
           padding: 'clamp(48px,7vw,80px) 24px 0',
         }}
@@ -273,7 +273,7 @@ export default function RewardsClient() {
 
       <div
         style={{
-          maxWidth: 1180,
+          maxWidth: 1400,
           margin: '0 auto',
           padding: '32px 24px clamp(64px,8vw,104px)',
           display: 'grid',

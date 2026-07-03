@@ -23,7 +23,7 @@ export default function Nav() {
     >
       <nav
         style={{
-          maxWidth: 1180,
+          maxWidth: 1400,
           margin: '0 auto',
           padding: '14px 24px',
           display: 'flex',

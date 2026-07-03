@@ -11,7 +11,7 @@ export default function Footer() {
     <footer style={{ borderTop: '1px solid var(--line)' }}>
       <div
         style={{
-          maxWidth: 1180,
+          maxWidth: 1400,
           margin: '0 auto',
           padding: '36px 24px',
           display: 'flex',

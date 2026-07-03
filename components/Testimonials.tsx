@@ -18,7 +18,7 @@ export default function Testimonials() {
     <section style={{ background: 'var(--sand)' }}>
       <div
         style={{
-          maxWidth: 1180,
+          maxWidth: 1400,
           margin: '0 auto',
           padding: 'clamp(64px,8vw,104px) 24px',
           display: 'grid',

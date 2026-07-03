@@ -129,7 +129,7 @@ export default function About() {
         >
           <div
             style={{
-              maxWidth: 1180,
+              maxWidth: 1400,
               margin: '0 auto',
               display: 'grid',
               gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))',
@@ -161,7 +161,7 @@ export default function About() {
         {/* What we believe */}
         <section
           style={{
-            maxWidth: 1180,
+            maxWidth: 1400,
             margin: '0 auto',
             padding: 'clamp(56px,8vw,100px) 24px',
           }}
@@ -245,7 +245,7 @@ export default function About() {
         </section>
 
         {/* CTA */}
-        <section style={{ maxWidth: 1180, margin: '0 auto', padding: '0 24px clamp(72px,9vw,120px)' }}>
+        <section style={{ maxWidth: 1400, margin: '0 auto', padding: '0 24px clamp(72px,9vw,120px)' }}>
           <div
             style={{
               background: 'var(--ink)',
