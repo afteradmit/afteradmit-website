@@ -11,6 +11,7 @@ export default function SignUp() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [phone, setPhone] = useState('')
+  const [username, setUsername] = useState('')
   const [error, setError] = useState('')
   const [message, setMessage] = useState('')
   const [loading, setLoading] = useState(false)
@@ -34,7 +35,7 @@ export default function SignUp() {
       email,
       password,
       options: {
-        data: { phone_number: phone },
+        data: { phone_number: phone, username },
       },
     })
 
@@ -155,6 +156,21 @@ export default function SignUp() {
                 placeholder="Minimum 6 characters"
                 required
                 minLength={6}
+                className="input-field"
+                style={inputStyle}
+              />
+            </div>
+
+            <div>
+              <label style={{ fontSize: 13, fontWeight: 600, display: 'block', marginBottom: 6 }}>
+                Username
+              </label>
+              <input
+                type="text"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                placeholder="How you'll appear in Community & Rewards"
+                required
                 className="input-field"
                 style={inputStyle}
               />
