@@ -79,6 +79,7 @@ function Leaderboard() {
         padding: 'clamp(20px,3vw,28px)',
         position: 'sticky',
         top: 90,
+        marginTop: 30,
       }}
     >
       <span
@@ -170,29 +171,16 @@ function Leaderboard() {
             alignItems: 'center',
             justifyContent: 'center',
             margin: '0 auto 12px',
-            fontSize: 16,
           }}
         >
-          🔒
+          <svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="1" y="7" width="12" height="8" rx="1.5" stroke="var(--muted)" strokeWidth="1.5"/>
+            <path d="M3.5 7V4.5a3.5 3.5 0 0 1 7 0V7" stroke="var(--muted)" strokeWidth="1.5"/>
+          </svg>
         </div>
-        <p style={{ fontSize: 13, fontWeight: 600, color: 'var(--muted)', margin: '0 0 14px', lineHeight: 1.5 }}>
+        <p style={{ fontSize: 13, fontWeight: 600, color: 'var(--muted)', margin: 0, lineHeight: 1.5 }}>
           Sign up to see your rank
         </p>
-        <Link
-          href="/signup"
-          style={{
-            display: 'inline-block',
-            padding: '10px 20px',
-            borderRadius: 'var(--radius-pill)',
-            background: 'var(--terracotta)',
-            color: '#fff',
-            fontSize: 13,
-            fontWeight: 700,
-            textDecoration: 'none',
-          }}
-        >
-          Join now
-        </Link>
       </div>
     </aside>
   )
@@ -207,79 +195,7 @@ export default function RewardsClient() {
         style={{
           maxWidth: 1400,
           margin: '0 auto',
-          padding: '48px 24px 0',
-        }}
-      >
-        <span
-          style={{
-            fontSize: 12,
-            fontWeight: 700,
-            letterSpacing: '.1em',
-            textTransform: 'uppercase',
-            color: 'var(--terracotta)',
-            display: 'block',
-            marginBottom: 14,
-          }}
-        >
-          REWARDS
-        </span>
-        <h1
-          style={{
-            fontWeight: 800,
-            fontSize: 'clamp(2rem,4.5vw,3rem)',
-            letterSpacing: '-.025em',
-            lineHeight: 1.08,
-            margin: '0 0 32px',
-          }}
-        >
-          Earn points. Unlock rewards.
-        </h1>
-        <p style={{ fontSize: 15, lineHeight: 1.6, color: 'var(--muted)', maxWidth: 640, margin: '-16px 0 32px' }}>
-          Earn points by completing milestones, engaging with the community, and exploring trusted
-          services. Redeem them for exclusive rewards, discounts, and vouchers.
-        </p>
-
-        {/* Subsection tabs */}
-        <div
-          style={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            gap: 8,
-            borderBottom: '1px solid var(--line)',
-            paddingBottom: 20,
-          }}
-        >
-          {tabs.map((tab) => {
-            const isActive = tab === active
-            return (
-              <button
-                key={tab}
-                onClick={() => setActive(tab)}
-                style={{
-                  padding: '10px 18px',
-                  borderRadius: 'var(--radius-pill)',
-                  border: 'none',
-                  background: isActive ? 'var(--terracotta)' : 'var(--surface)',
-                  color: isActive ? '#fff' : 'var(--muted)',
-                  fontSize: 14,
-                  fontWeight: 700,
-                  fontFamily: 'inherit',
-                  cursor: 'pointer',
-                  boxShadow: isActive ? 'none' : 'var(--shadow-card)',
-                }}
-              >
-                {tab}
-              </button>
-            )
-          })}
-        </div>
-      </div>
-
-      <div
-        style={{
-          maxWidth: 1400,
-          margin: '0 auto',
-          padding: '32px 24px 72px',
+          padding: '48px 24px 72px',
           display: 'grid',
           gridTemplateColumns: 'minmax(0,1fr) minmax(260px,320px)',
           gap: 32,
@@ -287,6 +203,71 @@ export default function RewardsClient() {
         }}
       >
         <div>
+          <span
+            style={{
+              fontSize: 12,
+              fontWeight: 700,
+              letterSpacing: '.1em',
+              textTransform: 'uppercase',
+              color: 'var(--terracotta)',
+              display: 'block',
+              marginBottom: 14,
+            }}
+          >
+            REWARDS
+          </span>
+          <h1
+            style={{
+              fontWeight: 800,
+              fontSize: 'clamp(2rem,4.5vw,3rem)',
+              letterSpacing: '-.025em',
+              lineHeight: 1.08,
+              margin: '0 0 32px',
+            }}
+          >
+            Earn points. Unlock rewards.
+          </h1>
+          <p style={{ fontSize: 15, lineHeight: 1.6, color: 'var(--muted)', maxWidth: 640, margin: '-16px 0 32px' }}>
+            Earn points by completing milestones, engaging with the community, and exploring trusted
+            services. Redeem them for exclusive rewards, discounts, and vouchers.
+          </p>
+
+          {/* Subsection tabs */}
+          <div
+            style={{
+              display: 'flex',
+              flexWrap: 'wrap',
+              gap: 8,
+              borderBottom: '1px solid var(--line)',
+              paddingBottom: 20,
+              marginBottom: 32,
+            }}
+          >
+            {tabs.map((tab) => {
+              const isActive = tab === active
+              return (
+                <button
+                  key={tab}
+                  onClick={() => setActive(tab)}
+                  style={{
+                    padding: '10px 18px',
+                    borderRadius: 'var(--radius-pill)',
+                    border: 'none',
+                    background: isActive ? 'var(--terracotta)' : 'var(--surface)',
+                    color: isActive ? '#fff' : 'var(--muted)',
+                    fontSize: 14,
+                    fontWeight: 700,
+                    fontFamily: 'inherit',
+                    cursor: 'pointer',
+                    boxShadow: isActive ? 'none' : 'var(--shadow-card)',
+                  }}
+                >
+                  {tab}
+                </button>
+              )
+            })}
+          </div>
+
           {active === 'My Rewards' && (
             <div style={{ ...cardStyle, padding: 'clamp(32px,5vw,48px)', textAlign: 'center' }}>
               <h2 style={{ fontSize: 22, fontWeight: 800, letterSpacing: '-.01em', margin: '0 0 12px' }}>
