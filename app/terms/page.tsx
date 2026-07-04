@@ -196,7 +196,8 @@ export default function Terms() {
   return (
     <>
       <Nav />
-      <main style={{ maxWidth: 1400, margin: '0 auto', padding: 'clamp(48px,7vw,88px) 24px clamp(64px,8vw,100px)' }}>
+      <main style={{ background: 'var(--sand)' }}>
+      <div style={{ maxWidth: 1400, margin: '0 auto', padding: 'clamp(48px,7vw,88px) 24px clamp(64px,8vw,100px)' }}>
       <div style={{ maxWidth: 900 }}>
         <span
           style={{
@@ -227,50 +228,60 @@ export default function Terms() {
           Last updated: July 3, 2026
         </p>
 
-        <p style={{ fontSize: '1.05rem', lineHeight: 1.7, color: 'var(--muted)', margin: '0 0 48px' }}>
-          Please read these Terms of Service carefully before using AfterAdmit. These Terms constitute
-          a legally binding agreement between you and AfterAdmit governing your access to and use of
-          the platform located at afteradmit.com (the &quot;Service&quot;).
-        </p>
+        <div
+          style={{
+            background: 'var(--surface)',
+            borderRadius: 'var(--radius-card)',
+            boxShadow: 'var(--shadow-card)',
+            padding: 'clamp(24px,4vw,40px)',
+          }}
+        >
+          <p style={{ fontSize: '1.05rem', lineHeight: 1.7, color: 'var(--muted)', margin: '0 0 40px' }}>
+            Please read these Terms of Service carefully before using AfterAdmit. These Terms constitute
+            a legally binding agreement between you and AfterAdmit governing your access to and use of
+            the platform located at afteradmit.com (the &quot;Service&quot;).
+          </p>
 
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 40 }}>
-          {sections.map(({ title, body, list, closing }) => (
-            <div key={title}>
-              <h2
-                style={{
-                  fontSize: '1.1rem',
-                  fontWeight: 700,
-                  letterSpacing: '-.01em',
-                  margin: '0 0 14px',
-                  color: 'var(--ink)',
-                }}
-              >
-                {title}
-              </h2>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
-                {body.map((para, i) => (
-                  <p key={i} style={{ fontSize: '1rem', lineHeight: 1.75, color: 'var(--muted)', margin: 0 }}>
-                    {para}
-                  </p>
-                ))}
-                {list && (
-                  <ul style={{ margin: 0, padding: '0 0 0 20px', display: 'flex', flexDirection: 'column', gap: 8 }}>
-                    {list.map((item, i) => (
-                      <li key={i} style={{ fontSize: '1rem', lineHeight: 1.75, color: 'var(--muted)' }}>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                )}
-                {closing?.map((para, i) => (
-                  <p key={i} style={{ fontSize: '1rem', lineHeight: 1.75, color: 'var(--muted)', margin: 0 }}>
-                    {para}
-                  </p>
-                ))}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 40 }}>
+            {sections.map(({ title, body, list, closing }) => (
+              <div key={title}>
+                <h2
+                  style={{
+                    fontSize: '1.1rem',
+                    fontWeight: 700,
+                    letterSpacing: '-.01em',
+                    margin: '0 0 14px',
+                    color: 'var(--ink)',
+                  }}
+                >
+                  {title}
+                </h2>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+                  {body.map((para, i) => (
+                    <p key={i} style={{ fontSize: '1rem', lineHeight: 1.75, color: 'var(--muted)', margin: 0 }}>
+                      {para}
+                    </p>
+                  ))}
+                  {list && (
+                    <ul style={{ margin: 0, padding: '0 0 0 20px', display: 'flex', flexDirection: 'column', gap: 8 }}>
+                      {list.map((item, i) => (
+                        <li key={i} style={{ fontSize: '1rem', lineHeight: 1.75, color: 'var(--muted)' }}>
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                  {closing?.map((para, i) => (
+                    <p key={i} style={{ fontSize: '1rem', lineHeight: 1.75, color: 'var(--muted)', margin: 0 }}>
+                      {para}
+                    </p>
+                  ))}
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
+      </div>
       </div>
       </main>
       <Footer />
