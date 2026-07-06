@@ -19,7 +19,7 @@ export default function Hero({ email, onEmail, onSubmit, ctaLabel }: HeroProps) 
         margin: '0 auto',
         padding: '48px 24px clamp(40px,6vw,80px)',
         display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit,minmax(460px,1fr))',
+        gridTemplateColumns: 'repeat(auto-fit,minmax(min(460px,100%),1fr))',
         gap: 'clamp(40px,6vw,72px)',
         alignItems: 'center',
       }}
@@ -35,9 +35,9 @@ export default function Hero({ email, onEmail, onSubmit, ctaLabel }: HeroProps) 
             margin: '0 0 22px',
           }}
         >
-          <span style={{ whiteSpace: 'nowrap' }}>Congratulations! You got in.</span>
+          <span className="whitespace-nowrap max-[1030px]:whitespace-normal">Congratulations! You got in.</span>
           <br />
-          <span style={{ whiteSpace: 'nowrap' }}>
+          <span className="whitespace-nowrap max-[1030px]:whitespace-normal">
             We&apos;ll handle <span style={{ color: 'var(--apricot)' }}>what&apos;s next.</span>
           </span>
         </h1>

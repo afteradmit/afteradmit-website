@@ -218,7 +218,7 @@ export default function ContactClient() {
             {errors.topic && <div style={errorStyle}>{errors.topic}</div>}
           </div>
 
-          <div style={{ display: 'flex', gap: 16 }}>
+          <div className="flex flex-col sm:flex-row" style={{ gap: 16 }}>
             <div style={{ flex: 1 }}>
               <label style={labelStyle} htmlFor="firstName">First name</label>
               <input

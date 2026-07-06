@@ -142,13 +142,11 @@ export default function FAQClient() {
 
       {/* Two-column content */}
       <div
+        className="grid grid-cols-1 gap-8 lg:gap-10 lg:grid-cols-[minmax(0,280px)_minmax(0,930px)]"
         style={{
           maxWidth: 1400,
           margin: '0 auto',
           padding: '0 24px 72px',
-          display: 'grid',
-          gridTemplateColumns: 'minmax(0,280px) minmax(0,930px)',
-          gap: 40,
           alignItems: 'start',
         }}
       >

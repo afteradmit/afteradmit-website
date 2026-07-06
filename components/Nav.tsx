@@ -1,3 +1,7 @@
+'use client'
+
+import { useState } from 'react'
+
 const navLinks = [
   { href: '/#services', label: 'Our Solution' },
   { href: '/#how', label: 'How it works' },
@@ -10,6 +14,8 @@ const navLinks = [
 ]
 
 export default function Nav() {
+  const [open, setOpen] = useState(false)
+
   return (
     <header
       style={{
@@ -55,6 +61,7 @@ export default function Nav() {
         <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
           <a
             href="/signin"
+            className="hide-nav-sm"
             style={{
               textDecoration: 'none',
               color: 'var(--muted)',
@@ -79,8 +86,87 @@ export default function Nav() {
           >
             Join now
           </a>
+
+          <button
+            type="button"
+            onClick={() => setOpen((v) => !v)}
+            aria-label={open ? 'Close menu' : 'Open menu'}
+            aria-expanded={open}
+            className="hidden max-[960px]:flex"
+            style={{
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: 38,
+              height: 38,
+              border: 'none',
+              background: 'transparent',
+              color: 'var(--ink)',
+              cursor: 'pointer',
+              flexShrink: 0,
+              padding: 0,
+            }}
+          >
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+              {open ? (
+                <>
+                  <line x1="4" y1="4" x2="18" y2="18" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+                  <line x1="18" y1="4" x2="4" y2="18" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+                </>
+              ) : (
+                <>
+                  <line x1="3" y1="6" x2="19" y2="6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+                  <line x1="3" y1="11" x2="19" y2="11" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+                  <line x1="3" y1="16" x2="19" y2="16" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+                </>
+              )}
+            </svg>
+          </button>
         </div>
       </nav>
+
+      {open && (
+        <div
+          className="hidden max-[960px]:flex"
+          style={{
+            flexDirection: 'column',
+            gap: 4,
+            padding: '8px 24px 20px',
+            borderTop: '1px solid var(--line)',
+            background: 'var(--paper)',
+          }}
+        >
+          {navLinks.map(({ href, label }) => (
+            <a
+              key={href}
+              href={href}
+              onClick={() => setOpen(false)}
+              style={{
+                textDecoration: 'none',
+                color: 'var(--ink)',
+                fontSize: 16,
+                fontWeight: 600,
+                padding: '12px 4px',
+                borderBottom: '1px solid var(--line)',
+              }}
+            >
+              {label}
+            </a>
+          ))}
+          <a
+            href="/signin"
+            onClick={() => setOpen(false)}
+            style={{
+              textDecoration: 'none',
+              color: 'var(--ink)',
+              fontSize: 16,
+              fontWeight: 600,
+              padding: '12px 4px',
+            }}
+          >
+            Sign in
+          </a>
+        </div>
+      )}
     </header>
   )
 }

@@ -39,13 +39,13 @@ export default function Pricing() {
             Pricing
           </span>
           <h2
+            className="whitespace-nowrap max-[560px]:whitespace-normal"
             style={{
               fontWeight: 800,
               fontSize: 'clamp(1.4rem,2.8vw,2.2rem)',
               lineHeight: 1.08,
               letterSpacing: '-0.025em',
               margin: '16px 0 0',
-              whiteSpace: 'nowrap',
             }}
           >
             Find the Right Level of Support

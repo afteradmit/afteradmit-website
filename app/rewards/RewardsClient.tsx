@@ -74,11 +74,10 @@ function initials(username: string) {
 function Leaderboard() {
   return (
     <aside
+      className="lg:sticky lg:top-[90px]"
       style={{
         ...cardStyle,
         padding: 'clamp(20px,3vw,28px)',
-        position: 'sticky',
-        top: 90,
         marginTop: 30,
       }}
     >
@@ -192,13 +191,11 @@ export default function RewardsClient() {
   return (
     <main style={{ background: 'var(--sand)' }}>
       <div
+        className="grid grid-cols-1 gap-8 lg:gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(260px,320px)]"
         style={{
           maxWidth: 1400,
           margin: '0 auto',
           padding: '48px 24px 72px',
-          display: 'grid',
-          gridTemplateColumns: 'minmax(0,1fr) minmax(260px,320px)',
-          gap: 32,
           alignItems: 'start',
         }}
       >
@@ -310,7 +307,7 @@ export default function RewardsClient() {
           )}
 
           {active === 'Badges & Tiers' && (
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(150px,1fr))', gap: 16 }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(min(150px,100%),1fr))', gap: 16 }}>
               {tiers.map((tier) => (
                 <div key={tier.name} style={{ ...cardStyle, padding: 24, textAlign: 'center' }}>
                   <div
