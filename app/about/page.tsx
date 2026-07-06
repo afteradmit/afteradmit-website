@@ -159,7 +159,7 @@ export default function About() {
 
         {/* Student Voices */}
         <section style={{ maxWidth: 1400, margin: '0 auto', padding: '48px 24px 48px' }}>
-          <div style={{ marginBottom: 48 }}>
+          <div style={{ marginBottom: 48, textAlign: 'center' }}>
             <span
               style={{
                 fontSize: 12,
