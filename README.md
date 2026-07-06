@@ -64,9 +64,7 @@ afteradmit-website/
 │   ├── Nav.tsx            # Sticky navigation header
 │   ├── Hero.tsx           # Hero with email signup and animated roadmap card
 │   ├── TrustBar.tsx       # "40+ universities" trust bar
-│   ├── Problem.tsx        # Problem stats section (dark background)
-│   ├── Services.tsx       # Six service category cards
-│   ├── HowItWorks.tsx     # Three-step process
+│   ├── Problem.tsx        # How it works (3 steps) + checklist (6 service cards)
 │   ├── Pricing.tsx        # Free + Concierge pricing plans
 │   ├── FAQ.tsx            # Accordion FAQ (client component)
 │   ├── FinalCTA.tsx       # Bottom email signup CTA
