@@ -67,7 +67,6 @@ afteradmit-website/
 │   ├── Problem.tsx        # Problem stats section (dark background)
 │   ├── Services.tsx       # Six service category cards
 │   ├── HowItWorks.tsx     # Three-step process
-│   ├── Testimonials.tsx   # Student testimonial cards
 │   ├── Pricing.tsx        # Free + Concierge pricing plans
 │   ├── FAQ.tsx            # Accordion FAQ (client component)
 │   ├── FinalCTA.tsx       # Bottom email signup CTA
