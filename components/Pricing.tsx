@@ -56,6 +56,19 @@ export default function Pricing() {
           </p>
         </div>
 
+        <p
+          className="hidden max-[700px]:block"
+          style={{
+            textAlign: 'center',
+            fontSize: 13,
+            fontWeight: 700,
+            color: 'var(--terracotta)',
+            margin: '0 auto 10px',
+            maxWidth: 860,
+          }}
+        >
+          &larr; Swipe to compare Premium Concierge &rarr;
+        </p>
         <div
           style={{
             maxWidth: 860,

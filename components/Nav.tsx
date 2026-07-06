@@ -96,8 +96,8 @@ export default function Nav() {
             style={{
               alignItems: 'center',
               justifyContent: 'center',
-              width: 38,
-              height: 38,
+              width: 44,
+              height: 44,
               border: 'none',
               background: 'transparent',
               color: 'var(--ink)',

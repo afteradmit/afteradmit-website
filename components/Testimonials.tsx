@@ -17,6 +17,7 @@ export default function Testimonials() {
   return (
     <section style={{ background: 'var(--sand)' }}>
       <div
+        className="max-[640px]:!py-12"
         style={{
           maxWidth: 1400,
           margin: '0 auto',

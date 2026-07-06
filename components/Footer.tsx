@@ -10,6 +10,7 @@ export default function Footer() {
   return (
     <footer style={{ borderTop: '1px solid var(--line)' }}>
       <div
+        className="max-[700px]:!flex-col max-[700px]:!text-center"
         style={{
           maxWidth: 1400,
           margin: '0 auto',
@@ -26,7 +27,7 @@ export default function Footer() {
           <span style={{ fontWeight: 700, fontSize: 16 }}>AfterAdmit</span>
         </div>
 
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 24, fontSize: 14 }}>
+        <div className="max-[700px]:!justify-center" style={{ display: 'flex', flexWrap: 'wrap', gap: 24, fontSize: 14 }}>
           {links.map(({ href, label }) => (
             <a key={href} href={href} style={{ color: 'var(--muted)', textDecoration: 'none' }}>
               {label}
@@ -34,7 +35,7 @@ export default function Footer() {
           ))}
         </div>
 
-        <div style={{ display: 'flex', alignItems: 'center', gap: 20, flexWrap: 'wrap' }}>
+        <div className="max-[700px]:!justify-center" style={{ display: 'flex', alignItems: 'center', gap: 20, flexWrap: 'wrap' }}>
           <a href="/privacy" style={{ fontSize: 13, color: 'var(--muted)', textDecoration: 'none' }}>Privacy Policy</a>
           <a href="/terms" style={{ fontSize: 13, color: 'var(--muted)', textDecoration: 'none' }}>Terms of Service</a>
           <span style={{ fontSize: 13, color: 'var(--muted)' }}>© 2026 AfterAdmit</span>

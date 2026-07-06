@@ -2,7 +2,7 @@ const logoWidths = [120, 104, 130, 96, 116]
 
 export default function TrustBar() {
   return (
-    <section style={{ maxWidth: 1400, margin: '0 auto', padding: '8px 24px 64px' }}>
+    <section className="max-[640px]:!pb-10" style={{ maxWidth: 1400, margin: '0 auto', padding: '8px 24px 64px' }}>
       <p
         style={{
           textAlign: 'center',
