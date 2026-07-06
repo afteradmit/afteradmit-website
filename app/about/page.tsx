@@ -246,23 +246,18 @@ export default function About() {
             >
               Meet the Founder
             </span>
-            <div
+            <img
+              src="/founder.jpg"
+              alt="Sayali Dhale"
               style={{
                 width: 88,
                 height: 88,
                 borderRadius: '50%',
-                background: 'var(--accent-soft)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
+                objectFit: 'cover',
+                display: 'block',
                 margin: '0 auto 20px',
-                fontSize: 28,
-                fontWeight: 800,
-                color: 'var(--accent)',
               }}
-            >
-              SD
-            </div>
+            />
             <h3 style={{ fontSize: '1.4rem', fontWeight: 800, letterSpacing: '-.01em', margin: '0 0 4px' }}>
               Sayali Dhale
             </h3>
