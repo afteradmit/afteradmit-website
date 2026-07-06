@@ -5,28 +5,35 @@ import Footer from '@/components/Footer'
 export const metadata: Metadata = {
   title: 'About us',
   description:
-    'AfterAdmit was built by international students who lived the chaos of moving abroad for university. Learn our story and what drives us.',
+    'AfterAdmit started during an MBA at UCLA Anderson, built to make trusted information accessible to every admitted student.',
 }
 
-const stats = [
-  { value: '2K+', label: 'admits guided to arrival' },
-  { value: '25+', label: 'home countries supported' },
-  { value: '40+', label: 'partner universities' },
-  { value: '100%', label: 'been-there team' },
+const storyParagraphs = [
+  'AfterAdmit started during my MBA at UCLA Anderson.',
+  'Like many admitted students, I found myself piecing together information from Reddit threads, WhatsApp groups, university portals, and countless websites. Every answer seemed to live somewhere different, and it was often difficult to know what to trust.',
+  'As I spoke with classmates and other admits, I realized I wasn\'t alone. Nearly everyone was asking the same questions, solving the same problems, and repeating the same mistakes.',
+  'That\'s when I started building AfterAdmit.',
+  'We exist to make trusted information accessible to every admitted student through personalized roadmaps, verified services, and a supportive community.',
 ]
 
-const principles = [
+const testimonials = [
   {
-    title: 'Clarity over noise',
-    body: 'One ordered list beats a hundred forum threads. We tell you what to do next — and why.',
+    quote:
+      '"This is exactly what I wish I had before moving to the US. It would\'ve saved me countless hours searching through forums and group chats."',
+    name: 'MBA Student',
+    origin: 'UCLA Anderson',
   },
   {
-    title: 'Right info, right time',
-    body: 'Guidance tuned to your school, country and deadlines — never generic, never too late.',
+    quote:
+      '"The personalized roadmap makes an overwhelming process finally feel manageable. Everything is organized in one place."',
+    name: 'Incoming Graduate Student',
+    origin: '',
   },
   {
-    title: 'Real humans behind it',
-    body: 'When the stakes are high, a checklist isn\'t enough. We\'re here when you need a person.',
+    quote:
+      '"Having trusted recommendations instead of ten conflicting opinions would have made every decision so much easier."',
+    name: 'International Student',
+    origin: '',
   },
 ]
 
@@ -40,7 +47,7 @@ export default function About() {
           style={{
             maxWidth: 960,
             margin: '0 auto',
-            padding: '48px 24px clamp(48px,6vw,80px)',
+            padding: '48px 24px 0',
             textAlign: 'center',
           }}
         >
@@ -60,35 +67,24 @@ export default function About() {
           <h1
             style={{
               fontWeight: 800,
-              fontSize: 'clamp(2.4rem,5.5vw,4rem)',
+              fontSize: 'clamp(1.8rem,4vw,2.8rem)',
               lineHeight: 1.02,
               letterSpacing: '-0.03em',
-              margin: '0 0 22px',
+              margin: '0 0 48px',
             }}
           >
-            Built by students who{' '}
-            <span style={{ fontStyle: 'italic', color: 'var(--accent)' }}>made the move.</span>
+            Built from experience.
+            <br />
+            <span style={{ color: 'var(--apricot)' }}>Designed for every admit.</span>
           </h1>
-          <p
-            style={{
-              fontSize: 'clamp(1.05rem,1.6vw,1.2rem)',
-              lineHeight: 1.6,
-              color: 'var(--muted)',
-              maxWidth: '38em',
-              margin: '0 auto',
-            }}
-          >
-            We&apos;re turning the most stressful months of a student&apos;s journey into a path
-            anyone can follow with confidence.
-          </p>
         </section>
 
         {/* Story */}
         <section
           style={{
-            maxWidth: 800,
+            maxWidth: 980,
             margin: '0 auto',
-            padding: '0 24px clamp(56px,7vw,96px)',
+            padding: '0 24px 48px',
           }}
         >
           <div
@@ -100,11 +96,7 @@ export default function About() {
               gap: 22,
             }}
           >
-            {[
-              'AfterAdmit started with a simple frustration: getting admitted was the celebration, but the months that followed were a blur of forms, deadlines, consulate rules and second-guessing — with no single place to turn.',
-              'We\'d been through it ourselves. We knew the panic of a visa appointment that wouldn\'t open, the housing lease signed sight unseen, the bank account that took three tries. And we knew almost all of it was avoidable with the right information at the right time.',
-              'So we built the guide we wished we\'d had — a clear, calm, personalized path that any admit can follow, from the acceptance email all the way to move-in day.',
-            ].map((para, i) => (
+            {storyParagraphs.map((para, i) => (
               <p
                 key={i}
                 style={{
@@ -112,6 +104,7 @@ export default function About() {
                   lineHeight: 1.7,
                   color: i === 0 ? 'var(--ink)' : 'var(--muted)',
                   margin: 0,
+                  fontWeight: i === 0 || i === 3 ? 700 : 500,
                 }}
               >
                 {para}
@@ -120,52 +113,52 @@ export default function About() {
           </div>
         </section>
 
-        {/* Stats */}
-        <section
-          style={{
-            background: 'var(--accent-soft)',
-            padding: 'clamp(48px,6vw,80px) 24px',
-          }}
-        >
+        {/* Our Mission */}
+        <section style={{ background: 'var(--accent-soft)' }}>
           <div
             style={{
-              maxWidth: 1400,
+              maxWidth: 980,
               margin: '0 auto',
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))',
-              gap: 'clamp(24px,4vw,48px)',
+              padding: '48px 24px 48px',
               textAlign: 'center',
             }}
           >
-            {stats.map(({ value, label }) => (
-              <div key={label}>
-                <div
-                  style={{
-      
-                    fontSize: 'clamp(2.2rem,4vw,3rem)',
-                    fontWeight: 800,
-                    letterSpacing: '-0.02em',
-                    color: 'var(--terracotta)',
-                    lineHeight: 1,
-                    marginBottom: 8,
-                  }}
-                >
-                  {value}
-                </div>
-                <div style={{ fontSize: 14, color: 'var(--muted)', fontWeight: 500 }}>{label}</div>
-              </div>
-            ))}
+            <span
+              style={{
+                fontSize: 12,
+                fontWeight: 700,
+                letterSpacing: '.1em',
+                textTransform: 'uppercase',
+                color: 'var(--accent)',
+                display: 'block',
+                marginBottom: 16,
+              }}
+            >
+              Our Mission
+            </span>
+            <h2
+              style={{
+                fontWeight: 800,
+                fontSize: 'clamp(1.9rem,3.8vw,2.8rem)',
+                lineHeight: 1.15,
+                letterSpacing: '-0.025em',
+                margin: '0 0 22px',
+              }}
+            >
+              Democratizing access to information for admitted students.
+            </h2>
+            <p style={{ fontSize: '1.08rem', lineHeight: 1.7, color: 'var(--ink)', margin: '0 0 16px' }}>
+              Every admitted student deserves to begin their journey with confidence.
+            </p>
+            <p style={{ fontSize: '1.05rem', lineHeight: 1.7, color: 'var(--muted)', margin: 0 }}>
+              AfterAdmit organizes scattered, unreliable information into clear, personalized guidance so
+              students can move from acceptance to arrival with clarity instead of confusion.
+            </p>
           </div>
         </section>
 
-        {/* What we believe */}
-        <section
-          style={{
-            maxWidth: 1400,
-            margin: '0 auto',
-            padding: 'clamp(56px,8vw,100px) 24px',
-          }}
-        >
+        {/* Student Voices */}
+        <section style={{ maxWidth: 1400, margin: '0 auto', padding: '48px 24px 48px' }}>
           <div style={{ marginBottom: 48 }}>
             <span
               style={{
@@ -178,74 +171,132 @@ export default function About() {
                 marginBottom: 16,
               }}
             >
-              What we believe
+              Student Voices
             </span>
             <h2
               style={{
-  
                 fontWeight: 800,
                 fontSize: 'clamp(1.9rem,3.8vw,2.8rem)',
                 lineHeight: 1.08,
                 letterSpacing: '-0.025em',
                 margin: 0,
-                maxWidth: '18em',
               }}
             >
-              The principles behind every roadmap.
+              What admits are saying.
             </h2>
           </div>
 
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
-              gap: 20,
+              gridTemplateColumns: 'repeat(auto-fit,minmax(280px,1fr))',
+              gap: 22,
             }}
           >
-            {principles.map(({ title, body }) => (
+            {testimonials.map(({ quote, name, origin }) => (
               <div
-                key={title}
+                key={name + origin}
                 style={{
                   background: 'var(--surface)',
-                  border: '1px solid var(--line)',
-                  borderRadius: 18,
-                  padding: 28,
+                  borderRadius: 'var(--radius-card)',
+                  boxShadow: 'var(--shadow-card)',
+                  padding: 30,
                 }}
               >
-                <div
+                <p
                   style={{
-                    width: 36,
-                    height: 36,
-                    borderRadius: 10,
-                    background: 'var(--accent-soft)',
-                    marginBottom: 18,
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
+                    fontSize: '1.05rem',
+                    fontWeight: 500,
+                    lineHeight: 1.6,
+                    color: 'var(--ink)',
+                    margin: '0 0 20px',
                   }}
                 >
-                  <span style={{ width: 10, height: 10, borderRadius: '50%', background: 'var(--accent)', display: 'block' }} />
-                </div>
-                <h3
-                  style={{
-                    fontSize: 17,
-                    fontWeight: 600,
-                    margin: '0 0 10px',
-                    letterSpacing: '-.01em',
-                  }}
-                >
-                  {title}
-                </h3>
-                <p style={{ fontSize: 15, lineHeight: 1.6, color: 'var(--muted)', margin: 0 }}>
-                  {body}
+                  {quote}
                 </p>
+                <div style={{ fontWeight: 700, fontSize: 14.5 }}>{name}</div>
+                {origin && <div style={{ fontSize: 13, fontWeight: 500, color: 'var(--muted)' }}>{origin}</div>}
               </div>
             ))}
           </div>
         </section>
 
+        {/* Meet the Founder */}
+        <section style={{ background: 'var(--paper)' }}>
+          <div
+            style={{
+              maxWidth: 700,
+              margin: '0 auto',
+              padding: '48px 24px 48px',
+              textAlign: 'center',
+            }}
+          >
+            <span
+              style={{
+                fontSize: 12,
+                fontWeight: 700,
+                letterSpacing: '.1em',
+                textTransform: 'uppercase',
+                color: 'var(--accent)',
+                display: 'block',
+                marginBottom: 24,
+              }}
+            >
+              Meet the Founder
+            </span>
+            <div
+              style={{
+                width: 88,
+                height: 88,
+                borderRadius: '50%',
+                background: 'var(--accent-soft)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                margin: '0 auto 20px',
+                fontSize: 28,
+                fontWeight: 800,
+                color: 'var(--accent)',
+              }}
+            >
+              SD
+            </div>
+            <h3 style={{ fontSize: '1.4rem', fontWeight: 800, letterSpacing: '-.01em', margin: '0 0 4px' }}>
+              Sayali Dhale
+            </h3>
+            <p style={{ fontSize: 15, fontWeight: 600, color: 'var(--muted)', margin: '0 0 2px' }}>
+              Founder, AfterAdmit
+            </p>
+            <p style={{ fontSize: 14, fontWeight: 500, color: 'var(--muted)', margin: '0 0 20px' }}>
+              MBA Candidate, UCLA Anderson
+            </p>
+            <a
+              href="https://www.linkedin.com/in/sayalidhale/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: 8,
+                padding: '10px 20px',
+                borderRadius: 'var(--radius-pill)',
+                border: '1.5px solid var(--line)',
+                color: 'var(--ink)',
+                fontSize: 14,
+                fontWeight: 700,
+                textDecoration: 'none',
+              }}
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.95v5.66H9.34V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.11 20.45H3.56V9h3.55v11.45z"/>
+              </svg>
+              Connect on LinkedIn
+            </a>
+          </div>
+        </section>
+
         {/* CTA */}
-        <section style={{ maxWidth: 1400, margin: '0 auto', padding: '0 24px 72px' }}>
+        <section style={{ maxWidth: 1400, margin: '0 auto', padding: '48px 24px 48px' }}>
           <div
             style={{
               background: 'var(--ink)',
@@ -273,7 +324,7 @@ export default function About() {
             <div style={{ position: 'relative' }}>
               <h2
                 style={{
-    
+
                   fontWeight: 400,
                   fontSize: 'clamp(2rem,4vw,3rem)',
                   lineHeight: 1.1,
