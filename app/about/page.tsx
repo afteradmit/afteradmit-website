@@ -65,6 +65,7 @@ export default function About() {
             About us
           </span>
           <h1
+            className="max-[480px]:!text-[24px]"
             style={{
               fontWeight: 800,
               fontSize: 'clamp(1.8rem,4vw,2.8rem)',
@@ -99,6 +100,7 @@ export default function About() {
             {storyParagraphs.map((para, i) => (
               <p
                 key={i}
+                className={i === 3 ? 'max-[480px]:[text-wrap:balance]' : undefined}
                 style={{
                   fontSize: '1.08rem',
                   lineHeight: 1.7,
@@ -147,7 +149,7 @@ export default function About() {
             >
               Democratizing access to information for admitted students.
             </h2>
-            <p style={{ fontSize: '1.08rem', lineHeight: 1.7, color: 'var(--ink)', margin: '0 0 16px' }}>
+            <p className="max-[480px]:[text-wrap:balance]" style={{ fontSize: '1.08rem', lineHeight: 1.7, color: 'var(--ink)', margin: '0 0 16px' }}>
               Every admitted student deserves to begin their journey with confidence.
             </p>
             <p style={{ fontSize: '1.05rem', lineHeight: 1.7, color: 'var(--muted)', margin: 0 }}>
@@ -335,6 +337,7 @@ export default function About() {
                 Ready to make your move?
               </h2>
               <p
+                className="max-[480px]:[text-wrap:balance]"
                 style={{
                   fontSize: '1.08rem',
                   color: 'rgba(255,255,255,.66)',

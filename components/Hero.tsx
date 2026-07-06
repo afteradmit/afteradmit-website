@@ -27,7 +27,7 @@ export default function Hero({ email, onEmail, onSubmit, ctaLabel }: HeroProps) 
       {/* Left column */}
       <div style={{ containerType: 'inline-size' } as React.CSSProperties}>
         <h1
-          className="max-[440px]:!text-[2.25rem]"
+          className="max-[440px]:!text-[37px]"
           style={{
             fontWeight: 800,
             fontSize: 'clamp(3.2rem,11cqw,4.375rem)',

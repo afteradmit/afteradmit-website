@@ -30,6 +30,10 @@
 
 h1, h2, h3 { overflow-wrap: break-word; word-break: break-word; }
 
+@media (max-width: 480px) {
+  h1, h2, h3 { text-wrap: balance; }
+}
+
 html { scroll-behavior: smooth; }
 
 body { margin: 0; }

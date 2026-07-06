@@ -50,7 +50,7 @@ export default function CommunityPage() {
           >
             We&apos;re coming soon.
           </h1>
-          <p style={{ fontSize: 15, lineHeight: 1.6, color: 'var(--muted)', margin: '0 0 32px', maxWidth: 440 }}>
+          <p className="max-[480px]:[text-wrap:balance]" style={{ fontSize: 15, lineHeight: 1.6, color: 'var(--muted)', margin: '0 0 32px', maxWidth: 440 }}>
             A place to connect with other admits, ask questions without judgment, and share what
             you learn along the way. We&apos;re building it now, so check back soon.
           </p>

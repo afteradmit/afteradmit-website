@@ -54,6 +54,7 @@ export default function FinalCTA({ email, onEmail, onSubmit, ctaLabel }: FinalCT
               Let us handle the rest.
             </h2>
             <p
+              className="max-[480px]:[text-wrap:balance]"
               style={{
                 fontSize: 'clamp(1.06rem,1.6vw,1.18rem)',
                 fontWeight: 500,
