@@ -25,7 +25,7 @@ const cellBase: React.CSSProperties = {
 export default function Pricing() {
   return (
     <section id="pricing" style={{ background: 'var(--paper)' }}>
-      <div style={{ maxWidth: 1400, margin: '0 auto', padding: 'clamp(40px,6vw,72px) 24px clamp(64px,8vw,104px)' }}>
+      <div style={{ maxWidth: 1400, margin: '0 auto', padding: 'clamp(64px,8vw,104px) 24px clamp(64px,8vw,104px)' }}>
         <div style={{ textAlign: 'center', maxWidth: 780, margin: '0 auto 48px' }}>
           <span
             style={{

@@ -53,7 +53,7 @@ export default function Problem() {
   return (
     <section id="how-it-works" style={{ background: 'var(--sand)' }}>
       <div style={{ maxWidth: 1400, margin: '0 auto', padding: 'clamp(64px,8vw,104px) 24px clamp(64px,8vw,104px)' }}>
-        <div style={{ maxWidth: 640, marginBottom: 52 }}>
+        <div style={{ maxWidth: 640, marginBottom: 48 }}>
           <span
             style={{
               fontSize: 13,
@@ -71,7 +71,7 @@ export default function Problem() {
               fontSize: 'clamp(2rem,4.4vw,3rem)',
               lineHeight: 1.08,
               letterSpacing: '-0.025em',
-              margin: '18px 0 0',
+              margin: '16px 0 0',
               color: 'var(--ink)',
             }}
           >
@@ -120,7 +120,7 @@ export default function Problem() {
               fontSize: 'clamp(2rem,4.4vw,3rem)',
               lineHeight: 1.08,
               letterSpacing: '-0.025em',
-              margin: '0 0 14px',
+              margin: '0 0 16px',
               color: 'var(--ink)',
             }}
           >
@@ -136,7 +136,7 @@ export default function Problem() {
           style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit,minmax(min(280px,100%),1fr))',
-            gap: 18,
+            gap: 22,
           }}
         >
           {services.map(({ icon, title, desc }) => (

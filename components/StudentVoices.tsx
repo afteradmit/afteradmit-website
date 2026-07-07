@@ -22,7 +22,7 @@ const testimonials = [
 export default function StudentVoices() {
   return (
     <section style={{ background: 'var(--sand)' }}>
-      <div style={{ maxWidth: 1400, margin: '0 auto', padding: 'clamp(48px,6vw,72px) 24px clamp(48px,6vw,72px)' }}>
+      <div style={{ maxWidth: 1400, margin: '0 auto', padding: 'clamp(64px,8vw,104px) 24px clamp(64px,8vw,104px)' }}>
         <div style={{ marginBottom: 48, textAlign: 'center' }}>
           <span
             style={{
