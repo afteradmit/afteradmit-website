@@ -1,6 +1,8 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { useRouter } from 'next/navigation'
+import { supabase } from '@/lib/supabase'
 
 const navLinks = [
   { href: '/#how-it-works', label: 'How it works' },
@@ -13,7 +15,30 @@ const navLinks = [
 ]
 
 export default function Nav() {
+  const router = useRouter()
   const [open, setOpen] = useState(false)
+  const [displayName, setDisplayName] = useState<string | null>(null)
+
+  useEffect(() => {
+    const getDisplayName = (session: { user: { user_metadata?: { username?: string }; email?: string } } | null) =>
+      session ? session.user.user_metadata?.username || session.user.email || 'Account' : null
+
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setDisplayName(getDisplayName(session))
+    })
+
+    const { data: listener } = supabase.auth.onAuthStateChange((_event, session) => {
+      setDisplayName(getDisplayName(session))
+    })
+
+    return () => listener.subscription.unsubscribe()
+  }, [])
+
+  const handleSignOut = async () => {
+    setOpen(false)
+    await supabase.auth.signOut()
+    router.push('/')
+  }
 
   const handleMobileLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     const isSamePageHash = href.startsWith('/#') && window.location.pathname === '/'
@@ -76,33 +101,74 @@ export default function Nav() {
         </div>
 
         <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-          <a
-            href="/signin"
-            className="hide-nav-sm"
-            style={{
-              textDecoration: 'none',
-              color: 'var(--muted)',
-              fontSize: 14,
-              fontWeight: 500,
-            }}
-          >
-            Sign in
-          </a>
-          <a
-            href="/signup"
-            className="nav-cta"
-            style={{
-              textDecoration: 'none',
-              background: 'var(--ink)',
-              color: '#fff',
-              padding: '10px 18px',
-              borderRadius: 999,
-              fontSize: 14,
-              fontWeight: 600,
-            }}
-          >
-            Join now
-          </a>
+          {displayName ? (
+            <>
+              <a
+                href="/dashboard"
+                className="hide-nav-sm"
+                style={{
+                  textDecoration: 'none',
+                  color: 'var(--muted)',
+                  fontSize: 14,
+                  fontWeight: 500,
+                  maxWidth: 160,
+                  overflow: 'hidden',
+                  textOverflow: 'ellipsis',
+                  whiteSpace: 'nowrap',
+                }}
+              >
+                {displayName}
+              </a>
+              <button
+                type="button"
+                onClick={handleSignOut}
+                className="nav-cta"
+                style={{
+                  border: 'none',
+                  background: 'var(--ink)',
+                  color: '#fff',
+                  padding: '10px 18px',
+                  borderRadius: 999,
+                  fontSize: 14,
+                  fontWeight: 600,
+                  cursor: 'pointer',
+                  fontFamily: 'inherit',
+                }}
+              >
+                Sign out
+              </button>
+            </>
+          ) : (
+            <>
+              <a
+                href="/signin"
+                className="hide-nav-sm"
+                style={{
+                  textDecoration: 'none',
+                  color: 'var(--muted)',
+                  fontSize: 14,
+                  fontWeight: 500,
+                }}
+              >
+                Sign in
+              </a>
+              <a
+                href="/signup"
+                className="nav-cta"
+                style={{
+                  textDecoration: 'none',
+                  background: 'var(--ink)',
+                  color: '#fff',
+                  padding: '10px 18px',
+                  borderRadius: 999,
+                  fontSize: 14,
+                  fontWeight: 600,
+                }}
+              >
+                Join now
+              </a>
+            </>
+          )}
 
           <button
             type="button"
@@ -169,19 +235,54 @@ export default function Nav() {
               {label}
             </a>
           ))}
-          <a
-            href="/signin"
-            onClick={() => setOpen(false)}
-            style={{
-              textDecoration: 'none',
-              color: 'var(--ink)',
-              fontSize: 16,
-              fontWeight: 600,
-              padding: '12px 4px',
-            }}
-          >
-            Sign in
-          </a>
+          {displayName ? (
+            <>
+              <a
+                href="/dashboard"
+                onClick={() => setOpen(false)}
+                style={{
+                  textDecoration: 'none',
+                  color: 'var(--ink)',
+                  fontSize: 16,
+                  fontWeight: 600,
+                  padding: '12px 4px',
+                }}
+              >
+                {displayName}
+              </a>
+              <button
+                type="button"
+                onClick={handleSignOut}
+                style={{
+                  textAlign: 'left',
+                  border: 'none',
+                  background: 'none',
+                  color: 'var(--ink)',
+                  fontSize: 16,
+                  fontWeight: 600,
+                  padding: '12px 4px',
+                  cursor: 'pointer',
+                  fontFamily: 'inherit',
+                }}
+              >
+                Sign out
+              </button>
+            </>
+          ) : (
+            <a
+              href="/signin"
+              onClick={() => setOpen(false)}
+              style={{
+                textDecoration: 'none',
+                color: 'var(--ink)',
+                fontSize: 16,
+                fontWeight: 600,
+                padding: '12px 4px',
+              }}
+            >
+              Sign in
+            </a>
+          )}
         </div>
       )}
     </header>
