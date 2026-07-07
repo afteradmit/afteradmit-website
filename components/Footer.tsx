@@ -67,14 +67,15 @@ export default function Footer() {
         }}
       >
         <div
-          className="max-[860px]:!grid-cols-2 max-[440px]:!grid-cols-1"
+          className="max-[860px]:!grid-cols-2"
           style={{
             display: 'grid',
             gridTemplateColumns: 'minmax(180px,1.4fr) repeat(4, minmax(0,1fr))',
             gap: 32,
+            rowGap: 40,
           }}
         >
-          <div>
+          <div className="max-[860px]:!col-span-2">
             <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 16 }}>
               <img src="/logo.png" alt="AfterAdmit" style={{ width: 28, height: 28, borderRadius: 8, display: 'block' }} />
               <span style={{ fontWeight: 700, fontSize: 16 }}>AfterAdmit</span>
