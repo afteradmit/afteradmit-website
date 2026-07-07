@@ -51,7 +51,7 @@ const services = [
 
 export default function Problem() {
   return (
-    <section id="how-it-works" style={{ background: 'var(--sand)' }}>
+    <section id="how-it-works" style={{ background: 'var(--sand)', scrollMarginTop: 'var(--nav-offset)' } as React.CSSProperties}>
       <div style={{ maxWidth: 1400, margin: '0 auto', padding: 'clamp(56px,8vw,88px) 24px clamp(56px,8vw,88px)' }}>
         <div style={{ maxWidth: 640, marginBottom: 48 }}>
           <span
@@ -113,7 +113,7 @@ export default function Problem() {
           ))}
         </div>
 
-        <div id="services" style={{ maxWidth: 640, margin: 'clamp(48px,6vw,72px) 0 48px' }}>
+        <div id="services" style={{ maxWidth: 640, margin: 'clamp(48px,6vw,72px) 0 48px', scrollMarginTop: 'var(--nav-offset)' } as React.CSSProperties}>
           <h2
             style={{
               fontWeight: 800,

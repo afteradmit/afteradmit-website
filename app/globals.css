@@ -24,6 +24,22 @@
   --accent:      var(--terracotta);
   --accent-ink:  var(--terracotta-dk);
   --accent-soft: var(--peach);
+
+  /* Sticky nav bar height, used as scroll-margin-top on in-page anchor
+     targets so the section start lands flush below the nav with no gap
+     (a gap would reveal a sliver of the previous section). Matches the
+     nav's own measured height at each breakpoint: ~70px on desktop,
+     ~73px at/below the 960px nav-links breakpoint, ~91px below 400px
+     where the "Join now" button wraps to two lines. */
+  --nav-offset: 70px;
+}
+
+@media (max-width: 960px) {
+  :root { --nav-offset: 73px; }
+}
+
+@media (max-width: 400px) {
+  :root { --nav-offset: 91px; }
 }
 
 * { box-sizing: border-box; }

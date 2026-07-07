@@ -15,6 +15,24 @@ const navLinks = [
 export default function Nav() {
   const [open, setOpen] = useState(false)
 
+  const handleMobileLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    const isSamePageHash = href.startsWith('/#') && window.location.pathname === '/'
+    if (isSamePageHash) {
+      e.preventDefault()
+      const id = href.slice(2)
+      setOpen(false)
+      // Wait for the menu-close re-render to commit before scrolling, so the
+      // target position is measured against the final (closed-menu) layout.
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        })
+      })
+    } else {
+      setOpen(false)
+    }
+  }
+
   return (
     <header
       style={{
@@ -138,7 +156,7 @@ export default function Nav() {
             <a
               key={href}
               href={href}
-              onClick={() => setOpen(false)}
+              onClick={(e) => handleMobileLinkClick(e, href)}
               style={{
                 textDecoration: 'none',
                 color: 'var(--ink)',
