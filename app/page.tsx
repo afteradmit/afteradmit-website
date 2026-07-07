@@ -6,6 +6,7 @@ import Hero from '@/components/Hero'
 import TrustBar from '@/components/TrustBar'
 import Problem from '@/components/Problem'
 import Pricing from '@/components/Pricing'
+import StudentVoices from '@/components/StudentVoices'
 import FinalCTA from '@/components/FinalCTA'
 import Footer from '@/components/Footer'
 
@@ -28,6 +29,7 @@ export default function Home() {
         <TrustBar />
         <Problem />
         <Pricing />
+        <StudentVoices />
         <FinalCTA email={email} onEmail={setEmail} onSubmit={handleSubmit} ctaLabel={ctaLabel} />
       </main>
       <Footer />
