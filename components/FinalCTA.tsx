@@ -8,7 +8,7 @@ interface FinalCTAProps {
 export default function FinalCTA({ email, onEmail, onSubmit, ctaLabel }: FinalCTAProps) {
   return (
     <section style={{ background: 'var(--paper)' }}>
-      <div style={{ maxWidth: 1400, margin: '0 auto', padding: 'clamp(64px,8vw,104px) 24px clamp(48px,6vw,72px)' }}>
+      <div style={{ maxWidth: 1400, margin: '0 auto', padding: 'clamp(56px,8vw,88px) 24px clamp(40px,6vw,60px)' }}>
         <div
           style={{
             background: 'var(--ink)',
