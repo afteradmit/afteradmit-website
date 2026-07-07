@@ -84,7 +84,7 @@ export default function Pricing() {
                 <th style={{ textAlign: 'left', padding: '24px 20px', verticalAlign: 'bottom' }}>
                   <span style={{ fontSize: 13, fontWeight: 700, color: 'var(--muted)' }}>Features</span>
                 </th>
-                <th style={{ padding: '24px 20px', textAlign: 'center', verticalAlign: 'bottom' }}>
+                <th style={{ padding: '24px 20px', textAlign: 'center', verticalAlign: 'bottom', minWidth: 140 }}>
                   <div style={{ fontSize: 16, fontWeight: 800, letterSpacing: '-0.01em', marginBottom: 4 }}>Basic</div>
                   <div style={{ fontSize: 13, fontWeight: 600, color: 'var(--muted)' }}>Free</div>
                 </th>

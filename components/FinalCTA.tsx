@@ -63,7 +63,7 @@ export default function FinalCTA({ email, onEmail, onSubmit, ctaLabel }: FinalCT
                 margin: '0 auto 32px',
               }}
             >
-              Join the waitlist and we&apos;ll build your roadmap the moment we open in your region.
+              Join AfterAdmit to stay organized, informed, and connected.
             </p>
 
             <form

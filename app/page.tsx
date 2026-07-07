@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { useRouter } from 'next/navigation'
 import Nav from '@/components/Nav'
 import Hero from '@/components/Hero'
 import TrustBar from '@/components/TrustBar'
@@ -11,15 +12,15 @@ import FinalCTA from '@/components/FinalCTA'
 import Footer from '@/components/Footer'
 
 export default function Home() {
+  const router = useRouter()
   const [email, setEmail] = useState('')
-  const [submitted, setSubmitted] = useState(false)
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    setSubmitted(true)
+    router.push(email ? `/signup?email=${encodeURIComponent(email)}` : '/signup')
   }
 
-  const ctaLabel = submitted ? "You're on the list ✓" : 'Get started'
+  const ctaLabel = 'Get started'
 
   return (
     <>
