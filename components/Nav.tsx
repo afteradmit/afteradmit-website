@@ -5,10 +5,10 @@ import { useState } from 'react'
 const navLinks = [
   { href: '/#how-it-works', label: 'How it works' },
   { href: '/#pricing', label: 'Pricing' },
-  { href: '/about', label: 'About us' },
   { href: '/community', label: 'Community' },
   { href: '/resources', label: 'Resources' },
   { href: '/rewards', label: 'Rewards' },
+  { href: '/about', label: 'About us' },
   { href: '/faq', label: 'FAQ' },
 ]
 
